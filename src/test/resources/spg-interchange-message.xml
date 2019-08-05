@@ -1,0 +1,30 @@
+<SPGInterchange xmlns="http://www.justice.gsi.gov.uk/SPG/" SchemaVersion="0-9-13" SchemaDate="2018-02-08">
+    <SPGInterchangeHeader>
+        <SenderIdentity>C12</SenderIdentity>
+        <ReceiverIdentity>N00</ReceiverIdentity>
+        <SenderControlReference>1551775774989</SenderControlReference>
+        <ReceiverControlReference>1555426447711</ReceiverControlReference>
+        <DateOfPreparation>2019-03-05</DateOfPreparation>
+        <TimeOfPreparation>08:49:35</TimeOfPreparation>
+        <ApplicationReference>SPG</ApplicationReference>
+    </SPGInterchangeHeader>
+    <SPGMessage>
+        <SPGMessageHeader>
+            <MessageType>SYS</MessageType>
+            <MessageVersionNumber>0-9-13</MessageVersionNumber>
+
+            <MessageReferenceNumber>1</MessageReferenceNumber>
+        </SPGMessageHeader>
+        <ConnectionNotification/>
+        <SPGMessageTrailer>
+            <MessageReferenceNumber>1</MessageReferenceNumber>
+        </SPGMessageTrailer>
+    </SPGMessage>
+    <SPGInterchangeTrailer>
+        <SenderControlReference>1551775774989</SenderControlReference>
+        <ReceiverControlReference>1555426447711</ReceiverControlReference>
+        <ControlCount>1</ControlCount>
+        <SenderIdentity>C12</SenderIdentity>
+        <ReceiverIdentity>N00</ReceiverIdentity>
+    </SPGInterchangeTrailer>
+</SPGInterchange>

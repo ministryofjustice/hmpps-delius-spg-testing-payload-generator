@@ -1,0 +1,32 @@
+<SPGInterchange xmlns="http://www.justice.gsi.gov.uk/SPG/" xmlns:spg="http://www.justice.gsi.gov.uk/SPG/"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaDate="2018-02-08" SchemaVersion="0-9-13">
+    <SPGInterchangeHeader>
+        <SenderIdentity>C21</SenderIdentity>
+        <ReceiverIdentity>N00</ReceiverIdentity>
+        <SenderControlReference>1555426447710</SenderControlReference>
+        <ReceiverControlReference>1555426447711</ReceiverControlReference>
+        <DateOfPreparation>2019-04-16</DateOfPreparation>
+        <TimeOfPreparation>15:54:08.792</TimeOfPreparation>
+        <ApplicationReference>SPGTest</ApplicationReference>
+    </SPGInterchangeHeader>
+    <SPGMessage>
+        <SPGMessageHeader>
+            <MessageType>RSP</MessageType>
+            <MessageVersionNumber>0-9-13</MessageVersionNumber>
+            <MessageReferenceNumber>1</MessageReferenceNumber>
+        </SPGMessageHeader>
+        <InterchangeStatusNotification>
+            <StatusCode>202</StatusCode>
+        </InterchangeStatusNotification>
+        <SPGMessageTrailer>
+            <MessageReferenceNumber>1</MessageReferenceNumber>
+        </SPGMessageTrailer>
+    </SPGMessage>
+    <SPGInterchangeTrailer>
+        <SenderControlReference>1555426447710</SenderControlReference>
+        <ReceiverControlReference>1555426447711</ReceiverControlReference>
+        <ControlCount>1</ControlCount>
+        <SenderIdentity>C21</SenderIdentity>
+        <ReceiverIdentity>N00</ReceiverIdentity>
+    </SPGInterchangeTrailer>
+</SPGInterchange>
