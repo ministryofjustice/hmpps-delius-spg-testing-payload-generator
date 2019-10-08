@@ -267,6 +267,324 @@ class MessageRenderer {
         return buildSoapMessage(body, SOAP_1_2_PROTOCOL)
     }
 
+    private static Map<String, Object> buildCourtReport(
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String appRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String masterSpgVersion,
+            final String spgUpdateUser,
+            final String requirementID,
+            final String eventID,
+            final String offenderID,
+            final String requirementTypeMainCategory,
+            final String requirementTypeSubCategory,
+            final String imposedDate,
+            final String length,
+            final String actualEndDate,
+            final String terminationReason,
+            final String rqProvider,
+            final String rqResponsibleTeam,
+            final String rqResponsibleOfficer) {
+
+        final Map<String, Object> data = [
+                "senderId"                   : senderId,
+                "receiverId"                 : receiverId,
+                "senderControlRef"           : senderControlRef,
+                "dateOfPreparation"          : dateOfPreparation,
+                "timeOfPreparation"          : timeOfPreparation,
+                "applicationRef"             : appRef,
+                "testIndicator"              : testIndicator,
+                "messageType"                : messageType,
+                "caseReferenceNumber"        : caseReferenceNumber,
+                "masterSpgVersion"           : masterSpgVersion,
+                "spgUpdateUser"              : spgUpdateUser,
+                "requirementID"              : requirementID,
+                "eventID"                    : eventID,
+                "offenderID"                 : offenderID,
+                "requirementTypeMainCategory": requirementTypeMainCategory,
+                "requirementTypeSubCategory" : requirementTypeSubCategory,
+                "imposedDate"                : imposedDate,
+                "length"                     : length,
+                "actualEndDate"              : actualEndDate,
+                "terminationReason"          : terminationReason,
+                "rqProvider"                 : rqProvider,
+                "rqResponsibleTeam"          : rqResponsibleTeam,
+                "rqResponsibleOfficer"       : rqResponsibleOfficer,
+        ] as Map<String, Object>
+        return data
+    }
+
+    private static Map<String, Object> buildEvent(
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String appRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String masterSpgVersion,
+            final String spgUpdateUser,
+            final String requirementID,
+            final String eventID,
+            final String offenderID,
+            final String requirementTypeMainCategory,
+            final String requirementTypeSubCategory,
+            final String imposedDate,
+            final String length,
+            final String actualEndDate,
+            final String terminationReason,
+            final String rqProvider,
+            final String rqResponsibleTeam,
+            final String rqResponsibleOfficer) {
+
+        final Map<String, Object> data = [
+                "senderId"                   : senderId,
+                "receiverId"                 : receiverId,
+                "senderControlRef"           : senderControlRef,
+                "dateOfPreparation"          : dateOfPreparation,
+                "timeOfPreparation"          : timeOfPreparation,
+                "applicationRef"             : appRef,
+                "testIndicator"              : testIndicator,
+                "messageType"                : messageType,
+                "caseReferenceNumber"        : caseReferenceNumber,
+                "masterSpgVersion"           : masterSpgVersion,
+                "spgUpdateUser"              : spgUpdateUser,
+                "requirementID"              : requirementID,
+                "eventID"                    : eventID,
+                "offenderID"                 : offenderID,
+                "requirementTypeMainCategory": requirementTypeMainCategory,
+                "requirementTypeSubCategory" : requirementTypeSubCategory,
+                "imposedDate"                : imposedDate,
+                "length"                     : length,
+                "actualEndDate"              : actualEndDate,
+                "terminationReason"          : terminationReason,
+                "rqProvider"                 : rqProvider,
+                "rqResponsibleTeam"          : rqResponsibleTeam,
+                "rqResponsibleOfficer"       : rqResponsibleOfficer,
+        ] as Map<String, Object>
+        return data
+    }
+
+    private static Map<String, Object> buildInstitutionalReport(
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String appRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String masterSpgVersion,
+            final String spgUpdateUser,
+            final String requirementID,
+            final String eventID,
+            final String offenderID,
+            final String requirementTypeMainCategory,
+            final String requirementTypeSubCategory,
+            final String imposedDate,
+            final String length,
+            final String actualEndDate,
+            final String terminationReason,
+            final String rqProvider,
+            final String rqResponsibleTeam,
+            final String rqResponsibleOfficer) {
+
+        final Map<String, Object> data = [
+                "senderId"                   : senderId,
+                "receiverId"                 : receiverId,
+                "senderControlRef"           : senderControlRef,
+                "dateOfPreparation"          : dateOfPreparation,
+                "timeOfPreparation"          : timeOfPreparation,
+                "applicationRef"             : appRef,
+                "testIndicator"              : testIndicator,
+                "messageType"                : messageType,
+                "caseReferenceNumber"        : caseReferenceNumber,
+                "masterSpgVersion"           : masterSpgVersion,
+                "spgUpdateUser"              : spgUpdateUser,
+                "requirementID"              : requirementID,
+                "eventID"                    : eventID,
+                "offenderID"                 : offenderID,
+                "requirementTypeMainCategory": requirementTypeMainCategory,
+                "requirementTypeSubCategory" : requirementTypeSubCategory,
+                "imposedDate"                : imposedDate,
+                "length"                     : length,
+                "actualEndDate"              : actualEndDate,
+                "terminationReason"          : terminationReason,
+                "rqProvider"                 : rqProvider,
+                "rqResponsibleTeam"          : rqResponsibleTeam,
+                "rqResponsibleOfficer"       : rqResponsibleOfficer,
+        ] as Map<String, Object>
+        return data
+    }
+
+    private static Map<String, Object> buildLicCondition(
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String appRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String masterSpgVersion,
+            final String spgUpdateUser,
+            final String requirementID,
+            final String eventID,
+            final String offenderID,
+            final String requirementTypeMainCategory,
+            final String requirementTypeSubCategory,
+            final String imposedDate,
+            final String length,
+            final String actualEndDate,
+            final String terminationReason,
+            final String rqProvider,
+            final String rqResponsibleTeam,
+            final String rqResponsibleOfficer) {
+
+        final Map<String, Object> data = [
+                "senderId"                   : senderId,
+                "receiverId"                 : receiverId,
+                "senderControlRef"           : senderControlRef,
+                "dateOfPreparation"          : dateOfPreparation,
+                "timeOfPreparation"          : timeOfPreparation,
+                "applicationRef"             : appRef,
+                "testIndicator"              : testIndicator,
+                "messageType"                : messageType,
+                "caseReferenceNumber"        : caseReferenceNumber,
+                "masterSpgVersion"           : masterSpgVersion,
+                "spgUpdateUser"              : spgUpdateUser,
+                "requirementID"              : requirementID,
+                "eventID"                    : eventID,
+                "offenderID"                 : offenderID,
+                "requirementTypeMainCategory": requirementTypeMainCategory,
+                "requirementTypeSubCategory" : requirementTypeSubCategory,
+                "imposedDate"                : imposedDate,
+                "length"                     : length,
+                "actualEndDate"              : actualEndDate,
+                "terminationReason"          : terminationReason,
+                "rqProvider"                 : rqProvider,
+                "rqResponsibleTeam"          : rqResponsibleTeam,
+                "rqResponsibleOfficer"       : rqResponsibleOfficer,
+        ] as Map<String, Object>
+        return data
+    }
+
+    private static Map<String, Object> buildProcessContact(
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String appRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String masterSpgVersion,
+            final String spgUpdateUser,
+            final String requirementID,
+            final String eventID,
+            final String offenderID,
+            final String requirementTypeMainCategory,
+            final String requirementTypeSubCategory,
+            final String imposedDate,
+            final String length,
+            final String actualEndDate,
+            final String terminationReason,
+            final String rqProvider,
+            final String rqResponsibleTeam,
+            final String rqResponsibleOfficer) {
+
+        final Map<String, Object> data = [
+                "senderId"                   : senderId,
+                "receiverId"                 : receiverId,
+                "senderControlRef"           : senderControlRef,
+                "dateOfPreparation"          : dateOfPreparation,
+                "timeOfPreparation"          : timeOfPreparation,
+                "applicationRef"             : appRef,
+                "testIndicator"              : testIndicator,
+                "messageType"                : messageType,
+                "caseReferenceNumber"        : caseReferenceNumber,
+                "masterSpgVersion"           : masterSpgVersion,
+                "spgUpdateUser"              : spgUpdateUser,
+                "requirementID"              : requirementID,
+                "eventID"                    : eventID,
+                "offenderID"                 : offenderID,
+                "requirementTypeMainCategory": requirementTypeMainCategory,
+                "requirementTypeSubCategory" : requirementTypeSubCategory,
+                "imposedDate"                : imposedDate,
+                "length"                     : length,
+                "actualEndDate"              : actualEndDate,
+                "terminationReason"          : terminationReason,
+                "rqProvider"                 : rqProvider,
+                "rqResponsibleTeam"          : rqResponsibleTeam,
+                "rqResponsibleOfficer"       : rqResponsibleOfficer,
+        ] as Map<String, Object>
+        return data
+    }
+
+    private static Map<String, Object> buildPssRequirement(
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String appRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String masterSpgVersion,
+            final String spgUpdateUser,
+            final String requirementID,
+            final String eventID,
+            final String offenderID,
+            final String requirementTypeMainCategory,
+            final String requirementTypeSubCategory,
+            final String imposedDate,
+            final String length,
+            final String actualEndDate,
+            final String terminationReason,
+            final String rqProvider,
+            final String rqResponsibleTeam,
+            final String rqResponsibleOfficer) {
+
+        final Map<String, Object> data = [
+                "senderId"                   : senderId,
+                "receiverId"                 : receiverId,
+                "senderControlRef"           : senderControlRef,
+                "dateOfPreparation"          : dateOfPreparation,
+                "timeOfPreparation"          : timeOfPreparation,
+                "applicationRef"             : appRef,
+                "testIndicator"              : testIndicator,
+                "messageType"                : messageType,
+                "caseReferenceNumber"        : caseReferenceNumber,
+                "masterSpgVersion"           : masterSpgVersion,
+                "spgUpdateUser"              : spgUpdateUser,
+                "requirementID"              : requirementID,
+                "eventID"                    : eventID,
+                "offenderID"                 : offenderID,
+                "requirementTypeMainCategory": requirementTypeMainCategory,
+                "requirementTypeSubCategory" : requirementTypeSubCategory,
+                "imposedDate"                : imposedDate,
+                "length"                     : length,
+                "actualEndDate"              : actualEndDate,
+                "terminationReason"          : terminationReason,
+                "rqProvider"                 : rqProvider,
+                "rqResponsibleTeam"          : rqResponsibleTeam,
+                "rqResponsibleOfficer"       : rqResponsibleOfficer,
+        ] as Map<String, Object>
+        return data
+    }
+
     private static Map<String, Object> buildCommunityRequirement(
             final String senderId,
             final String receiverId,
@@ -692,6 +1010,366 @@ class MessageRenderer {
                 "entityTransferToResponsibleOfficer": entityTransferToResponsibleOfficer,
         ] as Map<String, Object>
         return data
+    }
+
+    @SuppressWarnings("unused")
+    Message renderCourtReport(
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String appRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String masterSpgVersion,
+            final String spgUpdateUser,
+            final String requirementID,
+            final String eventID,
+            final String offenderID,
+            final String requirementTypeMainCategory,
+            final String requirementTypeSubCategory,
+            final String imposedDate,
+            final String length,
+            final String actualEndDate,
+            final String terminationReason,
+            final String rqProvider,
+            final String rqResponsibleTeam,
+            final String rqResponsibleOfficer
+    ) throws Exception {
+        final URL templateUrl = getResourceUrl("templates/CommunityRequirement.tpl")
+        final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
+        final Map<String, Object> data = buildCourtReport(
+                senderId,
+                receiverId,
+                senderControlRef,
+                dateOfPreparation,
+                timeOfPreparation,
+                appRef,
+                testIndicator,
+                messageType,
+                caseReferenceNumber,
+                masterSpgVersion,
+                spgUpdateUser,
+                requirementID,
+                eventID,
+                offenderID,
+                requirementTypeMainCategory,
+                requirementTypeSubCategory,
+                imposedDate,
+                length,
+                actualEndDate,
+                terminationReason,
+                rqProvider,
+                rqResponsibleTeam,
+                rqResponsibleOfficer,
+        )
+        data.putAll(notificationCodeMap)
+
+        final String body = templateRenderer.render(templateUrl, data)
+
+        return buildSoapMessage(body, SOAP_1_2_PROTOCOL)
+    }
+
+    @SuppressWarnings("unused")
+    Message renderEvent(
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String appRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String masterSpgVersion,
+            final String spgUpdateUser,
+            final String requirementID,
+            final String eventID,
+            final String offenderID,
+            final String requirementTypeMainCategory,
+            final String requirementTypeSubCategory,
+            final String imposedDate,
+            final String length,
+            final String actualEndDate,
+            final String terminationReason,
+            final String rqProvider,
+            final String rqResponsibleTeam,
+            final String rqResponsibleOfficer
+    ) throws Exception {
+        final URL templateUrl = getResourceUrl("templates/CommunityRequirement.tpl")
+        final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
+        final Map<String, Object> data = buildEvent(
+                senderId,
+                receiverId,
+                senderControlRef,
+                dateOfPreparation,
+                timeOfPreparation,
+                appRef,
+                testIndicator,
+                messageType,
+                caseReferenceNumber,
+                masterSpgVersion,
+                spgUpdateUser,
+                requirementID,
+                eventID,
+                offenderID,
+                requirementTypeMainCategory,
+                requirementTypeSubCategory,
+                imposedDate,
+                length,
+                actualEndDate,
+                terminationReason,
+                rqProvider,
+                rqResponsibleTeam,
+                rqResponsibleOfficer,
+        )
+        data.putAll(notificationCodeMap)
+
+        final String body = templateRenderer.render(templateUrl, data)
+
+        return buildSoapMessage(body, SOAP_1_2_PROTOCOL)
+    }
+
+    @SuppressWarnings("unused")
+    Message renderInstitutionalReport(
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String appRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String masterSpgVersion,
+            final String spgUpdateUser,
+            final String requirementID,
+            final String eventID,
+            final String offenderID,
+            final String requirementTypeMainCategory,
+            final String requirementTypeSubCategory,
+            final String imposedDate,
+            final String length,
+            final String actualEndDate,
+            final String terminationReason,
+            final String rqProvider,
+            final String rqResponsibleTeam,
+            final String rqResponsibleOfficer
+    ) throws Exception {
+        final URL templateUrl = getResourceUrl("templates/CommunityRequirement.tpl")
+        final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
+        final Map<String, Object> data = buildInstitutionalReport(
+                senderId,
+                receiverId,
+                senderControlRef,
+                dateOfPreparation,
+                timeOfPreparation,
+                appRef,
+                testIndicator,
+                messageType,
+                caseReferenceNumber,
+                masterSpgVersion,
+                spgUpdateUser,
+                requirementID,
+                eventID,
+                offenderID,
+                requirementTypeMainCategory,
+                requirementTypeSubCategory,
+                imposedDate,
+                length,
+                actualEndDate,
+                terminationReason,
+                rqProvider,
+                rqResponsibleTeam,
+                rqResponsibleOfficer,
+        )
+        data.putAll(notificationCodeMap)
+
+        final String body = templateRenderer.render(templateUrl, data)
+
+        return buildSoapMessage(body, SOAP_1_2_PROTOCOL)
+    }
+
+    @SuppressWarnings("unused")
+    Message renderLicCondition(
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String appRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String masterSpgVersion,
+            final String spgUpdateUser,
+            final String requirementID,
+            final String eventID,
+            final String offenderID,
+            final String requirementTypeMainCategory,
+            final String requirementTypeSubCategory,
+            final String imposedDate,
+            final String length,
+            final String actualEndDate,
+            final String terminationReason,
+            final String rqProvider,
+            final String rqResponsibleTeam,
+            final String rqResponsibleOfficer
+    ) throws Exception {
+        final URL templateUrl = getResourceUrl("templates/CommunityRequirement.tpl")
+        final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
+        final Map<String, Object> data = buildLicCondition(
+                senderId,
+                receiverId,
+                senderControlRef,
+                dateOfPreparation,
+                timeOfPreparation,
+                appRef,
+                testIndicator,
+                messageType,
+                caseReferenceNumber,
+                masterSpgVersion,
+                spgUpdateUser,
+                requirementID,
+                eventID,
+                offenderID,
+                requirementTypeMainCategory,
+                requirementTypeSubCategory,
+                imposedDate,
+                length,
+                actualEndDate,
+                terminationReason,
+                rqProvider,
+                rqResponsibleTeam,
+                rqResponsibleOfficer,
+        )
+        data.putAll(notificationCodeMap)
+
+        final String body = templateRenderer.render(templateUrl, data)
+
+        return buildSoapMessage(body, SOAP_1_2_PROTOCOL)
+    }
+
+    @SuppressWarnings("unused")
+    Message renderProcessContact(
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String appRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String masterSpgVersion,
+            final String spgUpdateUser,
+            final String requirementID,
+            final String eventID,
+            final String offenderID,
+            final String requirementTypeMainCategory,
+            final String requirementTypeSubCategory,
+            final String imposedDate,
+            final String length,
+            final String actualEndDate,
+            final String terminationReason,
+            final String rqProvider,
+            final String rqResponsibleTeam,
+            final String rqResponsibleOfficer
+    ) throws Exception {
+        final URL templateUrl = getResourceUrl("templates/CommunityRequirement.tpl")
+        final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
+        final Map<String, Object> data = buildProcessContact(
+                senderId,
+                receiverId,
+                senderControlRef,
+                dateOfPreparation,
+                timeOfPreparation,
+                appRef,
+                testIndicator,
+                messageType,
+                caseReferenceNumber,
+                masterSpgVersion,
+                spgUpdateUser,
+                requirementID,
+                eventID,
+                offenderID,
+                requirementTypeMainCategory,
+                requirementTypeSubCategory,
+                imposedDate,
+                length,
+                actualEndDate,
+                terminationReason,
+                rqProvider,
+                rqResponsibleTeam,
+                rqResponsibleOfficer,
+        )
+        data.putAll(notificationCodeMap)
+
+        final String body = templateRenderer.render(templateUrl, data)
+
+        return buildSoapMessage(body, SOAP_1_2_PROTOCOL)
+    }
+
+    @SuppressWarnings("unused")
+    Message renderPssRequirement(
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String appRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String masterSpgVersion,
+            final String spgUpdateUser,
+            final String requirementID,
+            final String eventID,
+            final String offenderID,
+            final String requirementTypeMainCategory,
+            final String requirementTypeSubCategory,
+            final String imposedDate,
+            final String length,
+            final String actualEndDate,
+            final String terminationReason,
+            final String rqProvider,
+            final String rqResponsibleTeam,
+            final String rqResponsibleOfficer
+    ) throws Exception {
+        final URL templateUrl = getResourceUrl("templates/CommunityRequirement.tpl")
+        final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
+        final Map<String, Object> data = buildPssRequirement(
+                senderId,
+                receiverId,
+                senderControlRef,
+                dateOfPreparation,
+                timeOfPreparation,
+                appRef,
+                testIndicator,
+                messageType,
+                caseReferenceNumber,
+                masterSpgVersion,
+                spgUpdateUser,
+                requirementID,
+                eventID,
+                offenderID,
+                requirementTypeMainCategory,
+                requirementTypeSubCategory,
+                imposedDate,
+                length,
+                actualEndDate,
+                terminationReason,
+                rqProvider,
+                rqResponsibleTeam,
+                rqResponsibleOfficer,
+        )
+        data.putAll(notificationCodeMap)
+
+        final String body = templateRenderer.render(templateUrl, data)
+
+        return buildSoapMessage(body, SOAP_1_2_PROTOCOL)
     }
 
 }
