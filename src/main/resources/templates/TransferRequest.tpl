@@ -193,6 +193,34 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                     }
                     break
                 case "OSTRANSFERREQUEST":
+                    OMTransferRequest {
+                        OMTransferRequestDetails {
+                            Offender {
+                                CaseReferenceNumber(caseReferenceNumber)
+                            }
+                            SPGVersion {
+                                if (entitySpgVersion == null) {
+                                    SPGVersion("00000000000000000000000000000000")
+                                } else {
+                                    SPGVersion(entitySpgVersion)
+                                }
+                                SPGUpdateUser(spgUpdateUser)
+                            }
+                            OMTransferRequest {
+                                TransferID(transferID)
+                                OffenderID(offenderID)
+                                OMTransferReason(entityTransferReason)
+                                OMTransferStatus(entityTransferStatus)
+                                OMTransferFromProvider(entityTransferFromProvider)
+                                OMTransferFromResponsibleTeam(entityTransferFromResponsibleTeam)
+                                OMTransferFromResponsibleOfficer(entityTransferFromResponsibleOfficer)
+                                OMTransferToProvider(entityTransferToProvider)
+                                OMTransferToResponsibleTeam(entityTransferToResponsibleTeam)
+                                OMTransferToResponsibleOfficer(entityTransferToResponsibleOfficer)
+                            }
+                        }
+                    }
+
                     OSTransferRequest {
                         OSTransferRequestDetails {
                             Offender {
