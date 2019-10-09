@@ -1,4 +1,4 @@
-xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", 'xmlns:xsi': "http://www.w3.org/2001/XMLSchema-instance", SchemaDate: "2018-02-08", SchemaVersion: "0-9-13", 'xsi:schemaLocation': "http://www.justice.gsi.gov.uk/SPG/ SPG-XML_Message_Root-V0-9-13.xsd") {
+xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", 'xmlns:xsi': "http://www.w3.org/2001/XMLSchema-instance", SchemaVersion: "0-9-13", SchemaDate: "2018-02-08", 'xsi:schemaLocation': "http://www.justice.gsi.gov.uk/SPG/ SPG-XML_Message_Root-V0-9-13.xsd") {
     SPGInterchangeHeader {
         SenderIdentity(senderId)
         ReceiverIdentity(receiverId)
@@ -152,7 +152,7 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                                 NSIID(entityID)
                                 OffenderID(offenderID)
                                 NSITransferReason(entityTransferReason)
-                                NSITransferStatus(entityTransferStatus)
+                                TransferStatus(entityTransferStatus)
                                 NSITransferFromProvider(entityTransferFromProvider)
                                 NSITransferFromResponsibleTeam(entityTransferFromResponsibleTeam)
                                 NSITransferFromResponsibleOfficer(entityTransferFromResponsibleOfficer)
