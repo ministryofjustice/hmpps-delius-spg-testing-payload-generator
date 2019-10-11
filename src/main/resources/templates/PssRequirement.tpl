@@ -42,9 +42,20 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                     EventID(eventID)
                     OffenderID(offenderID)
                     PSSRqmntTypeMainCategory(requirementTypeMainCategory)
-                    PSSRqmntTypeSubCategory(requirementTypeSubCategory)
+
+                    if (requirementTypeSubCategory != null) {
+                        PSSRqmntTypeSubCategory(requirementTypeSubCategory)
+                    }
+
                     ImposedDate(imposedDate)
-                    Length(length)
+
+                    if (notes != null) {
+                        Notes(notes)
+                    }
+
+                    if (length != null) {
+                        Length(length)
+                    }
 
                     if (actualEndDate != null) {
                         ActualEndDate(actualEndDate)
@@ -54,9 +65,13 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                         TerminationReason(terminationReason)
                     }
 
-                    PSProvider(rqProvider)
-                    PSResponsibleTeam(rqResponsibleTeam)
-                    PSResponsibleOfficer(rqResponsibleOfficer)
+                    if (attendanceCount != null) {
+                        AttendanceCount(attendanceCount)
+                    }
+
+                    PSProvider(psProvider)
+                    PSResponsibleTeam(psResponsibleTeam)
+                    PSResponsibleOfficer(psResponsibleOfficer)
                 }
             }
         }

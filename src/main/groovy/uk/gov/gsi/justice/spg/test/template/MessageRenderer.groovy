@@ -550,12 +550,14 @@ class MessageRenderer {
             final String requirementTypeMainCategory,
             final String requirementTypeSubCategory,
             final String imposedDate,
+            final String notes,
             final String length,
             final String actualEndDate,
             final String terminationReason,
-            final String rqProvider,
-            final String rqResponsibleTeam,
-            final String rqResponsibleOfficer) {
+            final String attendanceCount,
+            final String psProvider,
+            final String psResponsibleTeam,
+            final String psResponsibleOfficer) {
 
         final Map<String, Object> data = [
                 "senderId"                   : senderId,
@@ -575,12 +577,14 @@ class MessageRenderer {
                 "requirementTypeMainCategory": requirementTypeMainCategory,
                 "requirementTypeSubCategory" : requirementTypeSubCategory,
                 "imposedDate"                : imposedDate,
+                "notes"                      : notes,
                 "length"                     : length,
                 "actualEndDate"              : actualEndDate,
                 "terminationReason"          : terminationReason,
-                "rqProvider"                 : rqProvider,
-                "rqResponsibleTeam"          : rqResponsibleTeam,
-                "rqResponsibleOfficer"       : rqResponsibleOfficer,
+                "attendanceCount"            : attendanceCount,
+                "psProvider"                 : psProvider,
+                "psResponsibleTeam"          : psResponsibleTeam,
+                "psResponsibleOfficer"       : psResponsibleOfficer,
         ] as Map<String, Object>
         return data
     }
@@ -1038,7 +1042,7 @@ class MessageRenderer {
             final String rqResponsibleTeam,
             final String rqResponsibleOfficer
     ) throws Exception {
-        final URL templateUrl = getResourceUrl("templates/CommunityRequirement.tpl")
+        final URL templateUrl = getResourceUrl("templates/CourtReport.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildCourtReport(
                 senderId,
@@ -1098,7 +1102,7 @@ class MessageRenderer {
             final String rqResponsibleTeam,
             final String rqResponsibleOfficer
     ) throws Exception {
-        final URL templateUrl = getResourceUrl("templates/CommunityRequirement.tpl")
+        final URL templateUrl = getResourceUrl("templates/Event.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildEvent(
                 senderId,
@@ -1158,7 +1162,7 @@ class MessageRenderer {
             final String rqResponsibleTeam,
             final String rqResponsibleOfficer
     ) throws Exception {
-        final URL templateUrl = getResourceUrl("templates/CommunityRequirement.tpl")
+        final URL templateUrl = getResourceUrl("templates/InstitutionalReport.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildInstitutionalReport(
                 senderId,
@@ -1218,7 +1222,7 @@ class MessageRenderer {
             final String rqResponsibleTeam,
             final String rqResponsibleOfficer
     ) throws Exception {
-        final URL templateUrl = getResourceUrl("templates/CommunityRequirement.tpl")
+        final URL templateUrl = getResourceUrl("templates/LicCondition.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildLicCondition(
                 senderId,
@@ -1278,7 +1282,7 @@ class MessageRenderer {
             final String rqResponsibleTeam,
             final String rqResponsibleOfficer
     ) throws Exception {
-        final URL templateUrl = getResourceUrl("templates/CommunityRequirement.tpl")
+        final URL templateUrl = getResourceUrl("templates/ProcessContact.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildProcessContact(
                 senderId,
@@ -1331,14 +1335,16 @@ class MessageRenderer {
             final String requirementTypeMainCategory,
             final String requirementTypeSubCategory,
             final String imposedDate,
+            final String notes,
             final String length,
             final String actualEndDate,
             final String terminationReason,
-            final String rqProvider,
-            final String rqResponsibleTeam,
-            final String rqResponsibleOfficer
+            final String attendanceCount,
+            final String psProvider,
+            final String psResponsibleTeam,
+            final String psResponsibleOfficer
     ) throws Exception {
-        final URL templateUrl = getResourceUrl("templates/CommunityRequirement.tpl")
+        final URL templateUrl = getResourceUrl("templates/PssRequirement.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildPssRequirement(
                 senderId,
@@ -1358,12 +1364,14 @@ class MessageRenderer {
                 requirementTypeMainCategory,
                 requirementTypeSubCategory,
                 imposedDate,
+                notes,
                 length,
                 actualEndDate,
                 terminationReason,
-                rqProvider,
-                rqResponsibleTeam,
-                rqResponsibleOfficer,
+                attendanceCount,
+                psProvider,
+                psResponsibleTeam,
+                psResponsibleOfficer,
         )
         data.putAll(notificationCodeMap)
 
