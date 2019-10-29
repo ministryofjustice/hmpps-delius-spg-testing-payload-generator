@@ -1485,4 +1485,137 @@ class MessageRenderer {
         return buildSoapMessage(body, SOAP_1_2_PROTOCOL)
     }
 
+    @SuppressWarnings("unused")
+    Message renderUpwAppointment(
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String appRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String masterSpgVersion,
+            final String spgUpdateUser,
+            final String upwAppointmentID,
+            final String eventID,
+            final String offenderID,
+            final String projectName,
+            final String projectType,
+            final String appointmentDate,
+            final String startTime,
+            final String endTime,
+            final String minutesOffered,
+            final String notes,
+            final String highVisibilityVest,
+            final String provider,
+            final String upwTeam,
+            final String upwContactOfficer,
+            final String ndcupaContactID,
+            final String sensitiveContact,
+            final String alert
+    ) throws Exception {
+        final URL templateUrl = getResourceUrl("templates/UpwAppointment.tpl")
+        final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
+        final Map<String, Object> data = buildUpwAppointment(
+                senderId,
+                receiverId,
+                senderControlRef,
+                dateOfPreparation,
+                timeOfPreparation,
+                appRef,
+                testIndicator,
+                messageType,
+                caseReferenceNumber,
+                masterSpgVersion,
+                spgUpdateUser,
+                upwAppointmentID,
+                eventID,
+                offenderID,
+                projectName,
+                projectType,
+                appointmentDate,
+                startTime,
+                endTime,
+                minutesOffered,
+                notes,
+                highVisibilityVest,
+                provider,
+                upwTeam,
+                upwContactOfficer,
+                ndcupaContactID,
+                sensitiveContact,
+                alert,
+        )
+        data.putAll(notificationCodeMap)
+
+        final String body = templateRenderer.render(templateUrl, data)
+
+        return buildSoapMessage(body, SOAP_1_2_PROTOCOL)
+    }
+
+    private static Map<String, Object> buildUpwAppointment(
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String appRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String masterSpgVersion,
+            final String spgUpdateUser,
+            final String upwAppointmentID,
+            final String eventID,
+            final String offenderID,
+            final String projectName,
+            final String projectType,
+            final String appointmentDate,
+            final String startTime,
+            final String endTime,
+            final String minutesOffered,
+            final String highVisibilityVest,
+            final String notes,
+            final String provider,
+            final String upwTeam,
+            final String upwContactOfficer,
+            final String ndcupaContactID,
+            final String sensitiveContact,
+            final String alert) {
+
+        final Map<String, Object> data = [
+                "senderId"           : senderId,
+                "receiverId"         : receiverId,
+                "senderControlRef"   : senderControlRef,
+                "dateOfPreparation"  : dateOfPreparation,
+                "timeOfPreparation"  : timeOfPreparation,
+                "applicationRef"     : appRef,
+                "testIndicator"      : testIndicator,
+                "messageType"        : messageType,
+                "caseReferenceNumber": caseReferenceNumber,
+                "masterSpgVersion"   : masterSpgVersion,
+                "spgUpdateUser"      : spgUpdateUser,
+                "upwAppointmentID"   : upwAppointmentID,
+                "eventID"            : eventID,
+                "offenderID"         : offenderID,
+                "projectName"        : projectName,
+                "projectType"        : projectType,
+                "appointmentDate"    : appointmentDate,
+                "startTime"          : startTime,
+                "endTime"            : endTime,
+                "minutesOffered"     : minutesOffered,
+                "highVisibilityVest" : highVisibilityVest,
+                "notes"              : notes,
+                "provider"           : provider,
+                "upwTeam"            : upwTeam,
+                "upwContactOfficer"  : upwContactOfficer,
+                "ndcupaContactID"    : ndcupaContactID,
+                "sensitiveContact"   : sensitiveContact,
+                "alert"              : alert,
+        ] as Map<String, Object>
+        return data
+    }
+
 }
