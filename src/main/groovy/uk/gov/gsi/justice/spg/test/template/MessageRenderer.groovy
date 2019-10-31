@@ -719,6 +719,7 @@ class MessageRenderer {
                           final String sensitiveContact,
                           final String notes,
                           final String rarContact,
+                          final String alert,
                           final String protocol,
                           final String dateOfPreparation,
                           final String timeOfPreparation) throws Exception {
@@ -751,6 +752,7 @@ class MessageRenderer {
                 sensitiveContact,
                 notes,
                 rarContact,
+                alert,
                 dateOfPreparation,
                 timeOfPreparation
         )
@@ -787,6 +789,7 @@ class MessageRenderer {
                                                     final String sensitiveContact,
                                                     final String notes,
                                                     final String rarContact,
+                                                    final String alert,
                                                     final String dateOfPreparation,
                                                     final String timeOfPreparation) {
 
@@ -819,6 +822,7 @@ class MessageRenderer {
                 "sensitiveContact"   : sensitiveContact,
                 "notes"              : notes,
                 "rarContact"         : rarContact,
+                "alert"              : alert,
         ] as Map<String, Object>
         return data
     }
