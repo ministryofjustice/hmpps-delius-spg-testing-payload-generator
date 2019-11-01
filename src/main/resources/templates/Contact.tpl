@@ -38,6 +38,13 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                     OffenderID(offenderID)
                     EventID(eventID)
                     NSIID(nsiID)
+
+                    if (alert == null) {
+                        Alert('N')
+                    } else {
+                        Alert(alert)
+                    }
+
                     ContactType(contactType)
                     ContactDate(contactDate)
                     ContactStartTime(contactStartTime)
@@ -60,12 +67,6 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                     }
 
                     RARContact(rarContact)
-
-                    if (alert == null) {
-                        Alert('N')
-                    } else {
-                        Alert(alert)
-                    }
                 }
             }
         }
