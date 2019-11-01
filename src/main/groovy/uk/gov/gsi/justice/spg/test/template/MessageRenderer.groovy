@@ -1624,6 +1624,7 @@ class MessageRenderer {
 
     @SuppressWarnings("unused")
     Message renderOfflocRequest(
+            final String schemaDate,
             final String schemaVersion,
             final String senderId,
             final String receiverId,
@@ -1641,6 +1642,7 @@ class MessageRenderer {
         final URL templateUrl = getResourceUrl("templates/OfflocRequest.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildOfflocRequest(
+                schemaDate,
                 schemaVersion,
                 senderId,
                 receiverId,
@@ -1663,6 +1665,7 @@ class MessageRenderer {
     }
 
     private static Map<String, Object> buildOfflocRequest(
+            final String schemaDate,
             final String schemaVersion,
             final String senderId,
             final String receiverId,
@@ -1678,6 +1681,7 @@ class MessageRenderer {
             final String offlocRequestUser) {
 
         final Map<String, Object> data = [
+                "schemaDate"         : schemaDate,
                 "schemaVersion"      : schemaVersion,
                 "senderId"           : senderId,
                 "receiverId"         : receiverId,
@@ -1697,6 +1701,7 @@ class MessageRenderer {
 
     @SuppressWarnings("unused")
     Message renderOfflocRequestV2(
+            final String schemaDate,
             final String schemaVersion,
             final String senderId,
             final String receiverId,
@@ -1714,6 +1719,7 @@ class MessageRenderer {
         final URL templateUrl = getResourceUrl("templates/OfflocRequestV2.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildOfflocRequest(
+                schemaDate,
                 schemaVersion,
                 senderId,
                 receiverId,
@@ -1736,6 +1742,7 @@ class MessageRenderer {
     }
 
     private static Map<String, Object> buildOfflocRequestV2(
+            final String schemaDate,
             final String schemaVersion,
             final String senderId,
             final String receiverId,
@@ -1751,6 +1758,7 @@ class MessageRenderer {
             final String offlocRequestUser) {
 
         final Map<String, Object> data = [
+                "schemaDate"         : schemaDate,
                 "schemaVersion"      : schemaVersion,
                 "senderId"           : senderId,
                 "receiverId"         : receiverId,
