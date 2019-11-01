@@ -1622,4 +1622,150 @@ class MessageRenderer {
         return data
     }
 
+    @SuppressWarnings("unused")
+    Message renderOfflocRequest(
+            final String schemaVersion,
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String appRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String offenderID,
+            final String crcSearchID,
+            final String offlocRequestUser
+    ) throws Exception {
+        final URL templateUrl = getResourceUrl("templates/OfflocRequest.tpl")
+        final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
+        final Map<String, Object> data = buildOfflocRequest(
+                schemaVersion,
+                senderId,
+                receiverId,
+                senderControlRef,
+                dateOfPreparation,
+                timeOfPreparation,
+                appRef,
+                testIndicator,
+                messageType,
+                caseReferenceNumber,
+                offenderID,
+                crcSearchID,
+                offlocRequestUser,
+        )
+        data.putAll(notificationCodeMap)
+
+        final String body = templateRenderer.render(templateUrl, data)
+
+        return buildSoapMessage(body, SOAP_1_2_PROTOCOL)
+    }
+
+    private static Map<String, Object> buildOfflocRequest(
+            final String schemaVersion,
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String appRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String offenderID,
+            final String crcSearchID,
+            final String offlocRequestUser) {
+
+        final Map<String, Object> data = [
+                "schemaVersion"      : schemaVersion,
+                "senderId"           : senderId,
+                "receiverId"         : receiverId,
+                "senderControlRef"   : senderControlRef,
+                "dateOfPreparation"  : dateOfPreparation,
+                "timeOfPreparation"  : timeOfPreparation,
+                "applicationRef"     : appRef,
+                "testIndicator"      : testIndicator,
+                "messageType"        : messageType,
+                "caseReferenceNumber": caseReferenceNumber,
+                "offenderID"         : offenderID,
+                "crcSearchID"        : crcSearchID,
+                "offlocRequestUser"  : offlocRequestUser
+        ] as Map<String, Object>
+        return data
+    }
+
+    @SuppressWarnings("unused")
+    Message renderOfflocRequestV2(
+            final String schemaVersion,
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String appRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String offenderID,
+            final String crcSearchID,
+            final String offlocRequestUser
+    ) throws Exception {
+        final URL templateUrl = getResourceUrl("templates/OfflocRequestV2.tpl")
+        final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
+        final Map<String, Object> data = buildOfflocRequest(
+                schemaVersion,
+                senderId,
+                receiverId,
+                senderControlRef,
+                dateOfPreparation,
+                timeOfPreparation,
+                appRef,
+                testIndicator,
+                messageType,
+                caseReferenceNumber,
+                offenderID,
+                crcSearchID,
+                offlocRequestUser,
+        )
+        data.putAll(notificationCodeMap)
+
+        final String body = templateRenderer.render(templateUrl, data)
+
+        return buildSoapMessage(body, SOAP_1_2_PROTOCOL)
+    }
+
+    private static Map<String, Object> buildOfflocRequestV2(
+            final String schemaVersion,
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String appRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String offenderID,
+            final String crcSearchID,
+            final String offlocRequestUser) {
+
+        final Map<String, Object> data = [
+                "schemaVersion"      : schemaVersion,
+                "senderId"           : senderId,
+                "receiverId"         : receiverId,
+                "senderControlRef"   : senderControlRef,
+                "dateOfPreparation"  : dateOfPreparation,
+                "timeOfPreparation"  : timeOfPreparation,
+                "applicationRef"     : appRef,
+                "testIndicator"      : testIndicator,
+                "messageType"        : messageType,
+                "caseReferenceNumber": caseReferenceNumber,
+                "offenderID"         : offenderID,
+                "crcSearchID"        : crcSearchID,
+                "offlocRequestUser"  : offlocRequestUser
+        ] as Map<String, Object>
+        return data
+    }
+
 }
