@@ -209,6 +209,8 @@ class MessageRenderer {
 
     @SuppressWarnings("unused")
     Message renderCommunityRequirement(
+            final String schemaDate,
+            final String schemaVersion,
             final String senderId,
             final String receiverId,
             final String senderControlRef,
@@ -236,6 +238,8 @@ class MessageRenderer {
         final URL templateUrl = getResourceUrl("templates/CommunityRequirement.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildCommunityRequirement(
+                schemaDate,
+                schemaVersion,
                 senderId,
                 receiverId,
                 senderControlRef,
@@ -268,6 +272,8 @@ class MessageRenderer {
     }
 
     private static Map<String, Object> buildCourtReport(
+            final String schemaDate,
+            final String schemaVersion,
             final String senderId,
             final String receiverId,
             final String senderControlRef,
@@ -293,6 +299,8 @@ class MessageRenderer {
             final String rqResponsibleOfficer) {
 
         final Map<String, Object> data = [
+                "schemaDate"                 : schemaDate,
+                "schemaVersion"              : schemaVersion,
                 "senderId"                   : senderId,
                 "receiverId"                 : receiverId,
                 "senderControlRef"           : senderControlRef,
@@ -321,6 +329,8 @@ class MessageRenderer {
     }
 
     private static Map<String, Object> buildEvent(
+            final String schemaDate,
+            final String schemaVersion,
             final String senderId,
             final String receiverId,
             final String senderControlRef,
@@ -346,6 +356,8 @@ class MessageRenderer {
             final String rqResponsibleOfficer) {
 
         final Map<String, Object> data = [
+                "schemaDate"                 : schemaDate,
+                "schemaVersion"              : schemaVersion,
                 "senderId"                   : senderId,
                 "receiverId"                 : receiverId,
                 "senderControlRef"           : senderControlRef,
@@ -374,6 +386,8 @@ class MessageRenderer {
     }
 
     private static Map<String, Object> buildTerminateSentence(
+            final String schemaDate,
+            final String schemaVersion,
             final String senderId,
             final String receiverId,
             final String senderControlRef,
@@ -393,6 +407,8 @@ class MessageRenderer {
             final String terminationDateTime) {
 
         final Map<String, Object> data = [
+                "schemaDate"         : schemaDate,
+                "schemaVersion"      : schemaVersion,
                 "senderId"           : senderId,
                 "receiverId"         : receiverId,
                 "senderControlRef"   : senderControlRef,
@@ -415,6 +431,8 @@ class MessageRenderer {
     }
 
     private static Map<String, Object> buildInstitutionalReport(
+            final String schemaDate,
+            final String schemaVersion,
             final String senderId,
             final String receiverId,
             final String senderControlRef,
@@ -440,6 +458,8 @@ class MessageRenderer {
             final String rqResponsibleOfficer) {
 
         final Map<String, Object> data = [
+                "schemaDate"                 : schemaDate,
+                "schemaVersion"              : schemaVersion,
                 "senderId"                   : senderId,
                 "receiverId"                 : receiverId,
                 "senderControlRef"           : senderControlRef,
@@ -468,6 +488,8 @@ class MessageRenderer {
     }
 
     private static Map<String, Object> buildLicCondition(
+            final String schemaDate,
+            final String schemaVersion,
             final String senderId,
             final String receiverId,
             final String senderControlRef,
@@ -497,6 +519,8 @@ class MessageRenderer {
             final String lcResponsibleOfficer) {
 
         final Map<String, Object> data = [
+                "schemaDate"            : schemaDate,
+                "schemaVersion"         : schemaVersion,
                 "senderId"              : senderId,
                 "receiverId"            : receiverId,
                 "senderControlRef"      : senderControlRef,
@@ -529,6 +553,8 @@ class MessageRenderer {
     }
 
     private static Map<String, Object> buildProcessContact(
+            final String schemaDate,
+            final String schemaVersion,
             final String senderId,
             final String receiverId,
             final String senderControlRef,
@@ -554,6 +580,8 @@ class MessageRenderer {
             final String rqResponsibleOfficer) {
 
         final Map<String, Object> data = [
+                "schemaDate"                 : schemaDate,
+                "schemaVersion"              : schemaVersion,
                 "senderId"                   : senderId,
                 "receiverId"                 : receiverId,
                 "senderControlRef"           : senderControlRef,
@@ -582,6 +610,8 @@ class MessageRenderer {
     }
 
     private static Map<String, Object> buildPssRequirement(
+            final String schemaDate,
+            final String schemaVersion,
             final String senderId,
             final String receiverId,
             final String senderControlRef,
@@ -609,6 +639,8 @@ class MessageRenderer {
             final String psResponsibleOfficer) {
 
         final Map<String, Object> data = [
+                "schemaDate"                 : schemaDate,
+                "schemaVersion"              : schemaVersion,
                 "senderId"                   : senderId,
                 "receiverId"                 : receiverId,
                 "senderControlRef"           : senderControlRef,
@@ -639,6 +671,8 @@ class MessageRenderer {
     }
 
     private static Map<String, Object> buildCommunityRequirement(
+            final String schemaDate,
+            final String schemaVersion,
             final String senderId,
             final String receiverId,
             final String senderControlRef,
@@ -664,6 +698,8 @@ class MessageRenderer {
             final String rqResponsibleOfficer) {
 
         final Map<String, Object> data = [
+                "schemaDate"                 : schemaDate,
+                "schemaVersion"              : schemaVersion,
                 "senderId"                   : senderId,
                 "receiverId"                 : receiverId,
                 "senderControlRef"           : senderControlRef,
@@ -829,6 +865,8 @@ class MessageRenderer {
 
     @SuppressWarnings("unused")
     Message renderTransferRequest(
+            final String schemaDate,
+            final String schemaVersion,
             final String transaction,
             final String senderId,
             final String receiverId,
@@ -859,6 +897,8 @@ class MessageRenderer {
         final URL templateUrl = getResourceUrl("templates/TransferRequest.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildTransferRequest(
+                schemaDate,
+                schemaVersion,
                 transaction,
                 senderId,
                 receiverId,
@@ -894,6 +934,8 @@ class MessageRenderer {
     }
 
     private static Map<String, Object> buildTransferRequest(
+            final String schemaDate,
+            final String schemaVersion,
             final String transaction,
             final String senderId,
             final String receiverId,
@@ -922,6 +964,8 @@ class MessageRenderer {
             final String entityTransferToResponsibleOfficer) {
 
         final Map<String, Object> data = [
+                "schemaDate"                          : schemaDate,
+                "schemaVersion"                       : schemaVersion,
                 "transaction"                         : transaction,
                 "senderId"                            : senderId,
                 "receiverId"                          : receiverId,
@@ -954,6 +998,8 @@ class MessageRenderer {
 
     @SuppressWarnings("unused")
     Message renderTransferResponse(
+            final String schemaDate,
+            final String schemaVersion,
             final String transaction,
             final String senderId,
             final String receiverId,
@@ -982,6 +1028,8 @@ class MessageRenderer {
         final URL templateUrl = getResourceUrl("templates/TransferResponse.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildTransferResponse(
+                schemaDate,
+                schemaVersion,
                 transaction,
                 senderId,
                 receiverId,
@@ -1015,6 +1063,8 @@ class MessageRenderer {
     }
 
     private static Map<String, Object> buildTransferResponse(
+            final String schemaDate,
+            final String schemaVersion,
             final String transaction,
             final String senderId,
             final String receiverId,
@@ -1041,6 +1091,8 @@ class MessageRenderer {
             final String entityTransferToResponsibleOfficer) {
 
         final Map<String, Object> data = [
+                "schemaDate"                        : schemaDate,
+                "schemaVersion"                     : schemaVersion,
                 "transaction"                       : transaction,
                 "senderId"                          : senderId,
                 "receiverId"                        : receiverId,
@@ -1071,6 +1123,8 @@ class MessageRenderer {
 
     @SuppressWarnings("unused")
     Message renderCourtReport(
+            final String schemaDate,
+            final String schemaVersion,
             final String senderId,
             final String receiverId,
             final String senderControlRef,
@@ -1098,6 +1152,8 @@ class MessageRenderer {
         final URL templateUrl = getResourceUrl("templates/CourtReport.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildCourtReport(
+                schemaDate,
+                schemaVersion,
                 senderId,
                 receiverId,
                 senderControlRef,
@@ -1131,6 +1187,8 @@ class MessageRenderer {
 
     @SuppressWarnings("unused")
     Message renderEvent(
+            final String schemaDate,
+            final String schemaVersion,
             final String senderId,
             final String receiverId,
             final String senderControlRef,
@@ -1158,6 +1216,8 @@ class MessageRenderer {
         final URL templateUrl = getResourceUrl("templates/Event.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildEvent(
+                schemaDate,
+                schemaVersion,
                 senderId,
                 receiverId,
                 senderControlRef,
@@ -1191,6 +1251,8 @@ class MessageRenderer {
 
     @SuppressWarnings("unused")
     Message renderInstitutionalReport(
+            final String schemaDate,
+            final String schemaVersion,
             final String senderId,
             final String receiverId,
             final String senderControlRef,
@@ -1218,6 +1280,8 @@ class MessageRenderer {
         final URL templateUrl = getResourceUrl("templates/InstitutionalReport.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildInstitutionalReport(
+                schemaDate,
+                schemaVersion,
                 senderId,
                 receiverId,
                 senderControlRef,
@@ -1251,6 +1315,8 @@ class MessageRenderer {
 
     @SuppressWarnings("unused")
     Message renderLicCondition(
+            final String schemaDate,
+            final String schemaVersion,
             final String senderId,
             final String receiverId,
             final String senderControlRef,
@@ -1282,6 +1348,8 @@ class MessageRenderer {
         final URL templateUrl = getResourceUrl("templates/LicCondition.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildLicCondition(
+                schemaDate,
+                schemaVersion,
                 senderId,
                 receiverId,
                 senderControlRef,
@@ -1319,6 +1387,8 @@ class MessageRenderer {
 
     @SuppressWarnings("unused")
     Message renderProcessContact(
+            final String schemaDate,
+            final String schemaVersion,
             final String senderId,
             final String receiverId,
             final String senderControlRef,
@@ -1346,6 +1416,8 @@ class MessageRenderer {
         final URL templateUrl = getResourceUrl("templates/ProcessContact.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildProcessContact(
+                schemaDate,
+                schemaVersion,
                 senderId,
                 receiverId,
                 senderControlRef,
@@ -1379,6 +1451,8 @@ class MessageRenderer {
 
     @SuppressWarnings("unused")
     Message renderPssRequirement(
+            final String schemaDate,
+            final String schemaVersion,
             final String senderId,
             final String receiverId,
             final String senderControlRef,
@@ -1408,6 +1482,8 @@ class MessageRenderer {
         final URL templateUrl = getResourceUrl("templates/PssRequirement.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildPssRequirement(
+                schemaDate,
+                schemaVersion,
                 senderId,
                 receiverId,
                 senderControlRef,
@@ -1443,6 +1519,8 @@ class MessageRenderer {
 
     @SuppressWarnings("unused")
     Message renderTerminateSentence(
+            final String schemaDate,
+            final String schemaVersion,
             final String senderId,
             final String receiverId,
             final String senderControlRef,
@@ -1464,6 +1542,8 @@ class MessageRenderer {
         final URL templateUrl = getResourceUrl("templates/TerminateSentence.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildTerminateSentence(
+                schemaDate,
+                schemaVersion,
                 senderId,
                 receiverId,
                 senderControlRef,
@@ -1491,6 +1571,8 @@ class MessageRenderer {
 
     @SuppressWarnings("unused")
     Message renderUpwAppointment(
+            final String schemaDate,
+            final String schemaVersion,
             final String senderId,
             final String receiverId,
             final String senderControlRef,
@@ -1523,6 +1605,8 @@ class MessageRenderer {
         final URL templateUrl = getResourceUrl("templates/UpwAppointment.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildUpwAppointment(
+                schemaDate,
+                schemaVersion,
                 senderId,
                 receiverId,
                 senderControlRef,
@@ -1560,6 +1644,8 @@ class MessageRenderer {
     }
 
     private static Map<String, Object> buildUpwAppointment(
+            final String schemaDate,
+            final String schemaVersion,
             final String senderId,
             final String receiverId,
             final String senderControlRef,
@@ -1590,6 +1676,8 @@ class MessageRenderer {
             final String alert) {
 
         final Map<String, Object> data = [
+                "schemaDate"         : schemaDate,
+                "schemaVersion"      : schemaVersion,
                 "senderId"           : senderId,
                 "receiverId"         : receiverId,
                 "senderControlRef"   : senderControlRef,

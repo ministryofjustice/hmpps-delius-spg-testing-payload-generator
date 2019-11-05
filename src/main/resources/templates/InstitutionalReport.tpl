@@ -1,4 +1,4 @@
-// xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", 'xmlns:xsi': "http://www.w3.org/2001/XMLSchema-instance", SchemaDate: "2018-02-08", SchemaVersion: "0-9-13", 'xsi:schemaLocation': "http://www.justice.gsi.gov.uk/SPG/ SPG-XML_Message_Root-V0-9-13.xsd") {
+// xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", 'xmlns:xsi': "http://www.w3.org/2001/XMLSchema-instance", SchemaDate: schemaDate, SchemaVersion: schemaVersion, 'xsi:schemaLocation': "http://www.justice.gsi.gov.uk/SPG/ SPG-XML_Message_Root-V" + schemaVersion + ".xsd") {
 //     SPGInterchangeHeader {
 //         SenderIdentity(senderId)
 //         ReceiverIdentity(receiverId)
@@ -12,7 +12,7 @@
 //     SPGMessage {
 //         SPGMessageHeader {
 //             MessageType(messageType)
-//             MessageVersionNumber("0-9-13")
+//             MessageVersionNumber(schemaVersion)
 //             MessageReferenceNumber(1)
 //         }
 //
