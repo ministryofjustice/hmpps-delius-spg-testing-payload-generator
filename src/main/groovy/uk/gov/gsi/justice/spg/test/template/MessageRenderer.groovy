@@ -728,8 +728,8 @@ class MessageRenderer {
     }
 
     @SuppressWarnings("unused")
-    Message renderContact(final String version,
-                          final String date,
+    Message renderContact(final String schemaDate,
+                          final String schemaVersion,
                           final String senderControlRef,
                           final String appRef,
                           final String testIndicator,
@@ -762,8 +762,8 @@ class MessageRenderer {
         final URL templateUrl = getResourceUrl("templates/Contact.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", notificationCode)
         final Map<String, Object> data = buildContact(
-                version,
-                date,
+                schemaDate,
+                schemaVersion,
                 senderControlRef,
                 appRef,
                 testIndicator,
@@ -799,8 +799,8 @@ class MessageRenderer {
         return buildSoapMessage(body, protocol)
     }
 
-    private static Map<String, Object> buildContact(final String version,
-                                                    final String date,
+    private static Map<String, Object> buildContact(final String schemaDate,
+                                                    final String schemaVersion,
                                                     final String senderControlRef,
                                                     final String appRef,
                                                     final String testIndicator,
@@ -830,8 +830,8 @@ class MessageRenderer {
                                                     final String timeOfPreparation) {
 
         final Map<String, Object> data = [
-                "schemaVersion"      : version,
-                "schemaDate"         : date,
+                "schemaDate"         : schemaDate,
+                "schemaVersion"      : schemaVersion,
                 "senderControlRef"   : senderControlRef,
                 "applicationRef"     : appRef,
                 "testIndicator"      : testIndicator,
