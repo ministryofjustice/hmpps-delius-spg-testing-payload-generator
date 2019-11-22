@@ -232,6 +232,37 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                             }
                         }
                     }
+                    break
+                case "OMTRANSFERRESPONSE,OSTRANSFERRESPONSE":
+                    OMTransferResponse {
+                        OMTransferResponseDetails {
+                            Offender {
+                                CaseReferenceNumber(caseReferenceNumber)
+                            }
+                            SPGVersion {
+                                if (entitySpgVersion == null) {
+                                    SPGVersion("00000000000000000000000000000000")
+                                } else {
+                                    SPGVersion(entitySpgVersion)
+                                }
+                                SPGUpdateUser(spgUpdateUser)
+                            }
+                            OMTransferResponse {
+                                TransferID(transferID)
+                                OffenderID(offenderID)
+                                OMTransferStatus(entityTransferStatus)
+
+                                if (entityTransferStatus.equals("TR")) {
+                                    OMTransferRejectedReason(entityTransferRejectedReason)
+                                }
+
+                                OMTransferFromProvider(entityTransferFromProvider)
+                                OMTransferToProvider(entityTransferToProvider)
+                                OMTransferToResponsibleTeam(entityTransferToResponsibleTeam)
+                                OMTransferToResponsibleOfficer(entityTransferToResponsibleOfficer)
+                            }
+                        }
+                    }
 
                     OSTransferResponse {
                         OSTransferResponseDetails {

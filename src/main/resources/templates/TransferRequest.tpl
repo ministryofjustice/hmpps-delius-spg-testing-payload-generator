@@ -192,7 +192,7 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                         }
                     }
                     break
-                case "OSTRANSFERREQUEST":
+                case "OMTRANSFERREQUEST,OSTRANSFERREQUEST":
                     OMTransferRequest {
                         OMTransferRequestDetails {
                             Offender {
@@ -221,6 +221,65 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                         }
                     }
 
+                    OSTransferRequest {
+                        OSTransferRequestDetails {
+                            Offender {
+                                CaseReferenceNumber(caseReferenceNumber)
+                            }
+                            SPGVersion {
+                                if (entitySpgVersion == null) {
+                                    SPGVersion("00000000000000000000000000000000")
+                                } else {
+                                    SPGVersion(entitySpgVersion)
+                                }
+                                SPGUpdateUser(spgUpdateUser)
+                            }
+                            OSTransferRequest {
+                                TransferID(transferID)
+                                EventID(entityID)
+                                OffenderID(offenderID)
+                                OSTransferReason(entityTransferReason)
+                                OSTransferStatus(entityTransferStatus)
+                                OSTransferFromProvider(entityTransferFromProvider)
+                                OSTransferFromResponsibleTeam(entityTransferFromResponsibleTeam)
+                                OSTransferFromResponsibleOfficer(entityTransferFromResponsibleOfficer)
+                                OSTransferToProvider(entityTransferToProvider)
+                                OSTransferToResponsibleTeam(entityTransferToResponsibleTeam)
+                                OSTransferToResponsibleOfficer(entityTransferToResponsibleOfficer)
+                            }
+                        }
+                    }
+                    break
+                case "OMTRANSFERREQUEST":
+                    OMTransferRequest {
+                        OMTransferRequestDetails {
+                            Offender {
+                                CaseReferenceNumber(caseReferenceNumber)
+                            }
+                            SPGVersion {
+                                if (entitySpgVersion == null) {
+                                    SPGVersion("00000000000000000000000000000000")
+                                } else {
+                                    SPGVersion(entitySpgVersion)
+                                }
+                                SPGUpdateUser(spgUpdateUser)
+                            }
+                            OMTransferRequest {
+                                TransferID(transferID)
+                                OffenderID(offenderID)
+                                OMTransferReason(entityTransferReason)
+                                OMTransferStatus(entityTransferStatus)
+                                OMTransferFromProvider(entityTransferFromProvider)
+                                OMTransferFromResponsibleTeam(entityTransferFromResponsibleTeam)
+                                OMTransferFromResponsibleOfficer(entityTransferFromResponsibleOfficer)
+                                OMTransferToProvider(entityTransferToProvider)
+                                OMTransferToResponsibleTeam(entityTransferToResponsibleTeam)
+                                OMTransferToResponsibleOfficer(entityTransferToResponsibleOfficer)
+                            }
+                        }
+                    }
+                    break
+                case "OSTRANSFERREQUEST":
                     OSTransferRequest {
                         OSTransferRequestDetails {
                             Offender {
