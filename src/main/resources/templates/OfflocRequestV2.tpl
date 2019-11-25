@@ -16,13 +16,13 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
             MessageReferenceNumber(1)
         }
 
-        OFFLOCRequest {
-            OFFLOCRequestDetails {
+        OFFLOCRequest2 {
+            OFFLOCRequest2Details {
                 Offender {
                     CaseReferenceNumber(caseReferenceNumber)
                 }
 
-                OFFLOCRequest {
+                OFFLOCRequest2 {
                     OffenderID(offenderID)
                     CRCSearchID(crcSearchID)
                     OFFLOCRequestUser(offlocRequestUser)

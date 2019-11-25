@@ -1814,7 +1814,7 @@ class MessageRenderer {
     ) throws Exception {
         final URL templateUrl = getResourceUrl("templates/OfflocRequestV2.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
-        final Map<String, Object> data = buildOfflocRequest(
+        final Map<String, Object> data = buildOfflocRequestV2(
                 schemaDate,
                 schemaVersion,
                 senderId,
