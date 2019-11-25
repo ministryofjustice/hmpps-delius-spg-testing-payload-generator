@@ -1,4 +1,4 @@
-xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", 'xmlns:xsi': "http://www.w3.org/2001/XMLSchema-instance", SchemaDate: schemaDate, SchemaVersion: schemaVersion, 'xsi:schemaLocation': "http://www.justice.gsi.gov.uk/SPG/ SPG-XML_Message_Root-V" + schemaVersion + ".xsd") {
+xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", SchemaDate: schemaDate, SchemaVersion: schemaVersion) {
     SPGInterchangeHeader {
         SenderIdentity(senderId)
         ReceiverIdentity(receiverId)
