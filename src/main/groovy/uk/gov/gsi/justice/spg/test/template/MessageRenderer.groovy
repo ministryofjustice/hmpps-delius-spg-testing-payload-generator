@@ -208,6 +208,98 @@ class MessageRenderer {
     }
 
     @SuppressWarnings("unused")
+    Message renderCustodyKeyDate(final String version,
+                                 final String date,
+                                 final String senderControlRef,
+                                 final String appRef,
+                                 final String testIndicator,
+                                 final String senderId,
+                                 final String receiverId,
+                                 final String messageType,
+                                 final Integer notificationCode,
+                                 final String caseReferenceNumber,
+                                 final String spgVersion,
+                                 final String spgUpdateUser,
+                                 final String keyDateID,
+                                 final String eventID,
+                                 final String offenderID,
+                                 final String keyDateType,
+                                 final String keyDate,
+                                 final String protocol,
+                                 final String dateOfPreparation,
+                                 final String timeOfPreparation) throws Exception {
+        final URL templateUrl = getResourceUrl("templates/CustodyKeyDate.tpl")
+        final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", notificationCode)
+        final Map<String, Object> data = buildCustodyKeyDate(
+                version,
+                date,
+                senderControlRef,
+                appRef,
+                testIndicator,
+                senderId,
+                receiverId,
+                messageType,
+                caseReferenceNumber,
+                spgVersion,
+                spgUpdateUser,
+                keyDateID,
+                eventID,
+                offenderID,
+                keyDateType,
+                keyDate,
+                dateOfPreparation,
+                timeOfPreparation
+        )
+        data.putAll(notificationCodeMap)
+
+        final String body = templateRenderer.render(templateUrl, data)
+
+        return buildSoapMessage(body, protocol)
+    }
+
+    private static Map<String, Object> buildCustodyKeyDate(final String version,
+                                                           final String date,
+                                                           final String senderControlRef,
+                                                           final String appRef,
+                                                           final String testIndicator,
+                                                           final String senderId,
+                                                           final String receiverId,
+                                                           final String messageType,
+                                                           final String caseReferenceNumber,
+                                                           final String spgVersion,
+                                                           final String spgUpdateUser,
+                                                           final String keyDateID,
+                                                           final String eventID,
+                                                           final String offenderID,
+                                                           final String keyDateType,
+                                                           final String keyDate,
+                                                           final String dateOfPreparation,
+                                                           final String timeOfPreparation) {
+
+        final Map<String, Object> data = [
+                "schemaVersion"      : version,
+                "schemaDate"         : date,
+                "senderControlRef"   : senderControlRef,
+                "applicationRef"     : appRef,
+                "testIndicator"      : testIndicator,
+                "senderId"           : senderId,
+                "receiverId"         : receiverId,
+                "dateOfPreparation"  : dateOfPreparation,
+                "timeOfPreparation"  : timeOfPreparation,
+                "messageType"        : messageType,
+                "caseReferenceNumber": caseReferenceNumber,
+                "spgVersion"         : spgVersion,
+                "spgUpdateUser"      : spgUpdateUser,
+                "keyDateID"          : keyDateID,
+                "eventID"            : eventID,
+                "offenderID"         : offenderID,
+                "keyDateType"        : keyDateType,
+                "keyDate"            : keyDate,
+        ] as Map<String, Object>
+        return data
+    }
+
+    @SuppressWarnings("unused")
     Message renderCommunityRequirement(
             final String schemaDate,
             final String schemaVersion,
