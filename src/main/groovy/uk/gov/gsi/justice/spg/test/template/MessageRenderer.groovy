@@ -1907,6 +1907,122 @@ class MessageRenderer {
     }
 
     @SuppressWarnings("unused")
+    Message renderOffenderAddress(final String version,
+                                final String date,
+                                final String senderControlRef,
+                                final String appRef,
+                                final String testIndicator,
+                                final String senderId,
+                                final String receiverId,
+                                final String messageType,
+                                final Integer notificationCode,
+                                final String caseReferenceNumber,
+                                final String spgVersion,
+                                final String spgUpdateUser,
+                                final String offenderAddressID,
+                                final String offenderID,
+                                final String status,
+                                final String houseNumber,
+                                final String streetName,
+                                final String district,
+                                final String townCity,
+                                final String county,
+                                final String postcode,
+                                final String startDate,
+                                final String noFixedAbode,
+                                final String protocol,
+                                final String dateOfPreparation,
+                                final String timeOfPreparation) throws Exception {
+        final URL templateUrl = getResourceUrl("templates/OffenderAddress.tpl")
+        final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", notificationCode)
+        final Map<String, Object> data = buildOffenderAddress(
+                version,
+                date,
+                senderControlRef,
+                appRef,
+                testIndicator,
+                senderId,
+                receiverId,
+                messageType,
+                caseReferenceNumber,
+                spgVersion,
+                spgUpdateUser,
+                offenderAddressID,
+                offenderID,
+                status,
+                houseNumber,
+                streetName,
+                district,
+                townCity,
+                county,
+                postcode,
+                startDate,
+                noFixedAbode,
+                dateOfPreparation,
+                timeOfPreparation
+        )
+        data.putAll(notificationCodeMap)
+
+        final String body = templateRenderer.render(templateUrl, data)
+
+        return buildSoapMessage(body, protocol)
+    }
+
+    private static Map<String, Object> buildOffenderAddress(final String version,
+                                                            final String date,
+                                                            final String senderControlRef,
+                                                            final String appRef,
+                                                            final String testIndicator,
+                                                            final String senderId,
+                                                            final String receiverId,
+                                                            final String messageType,
+                                                            final String caseReferenceNumber,
+                                                            final String spgVersion,
+                                                            final String spgUpdateUser,
+                                                            final String offenderAddressID,
+                                                            final String offenderID,
+                                                            final String status,
+                                                            final String houseNumber,
+                                                            final String streetName,
+                                                            final String district,
+                                                            final String townCity,
+                                                            final String county,
+                                                            final String postcode,
+                                                            final String startDate,
+                                                            final String noFixedAbode,
+                                                            final String dateOfPreparation,
+                                                            final String timeOfPreparation) {
+
+        final Map<String, Object> data = [
+                "schemaVersion"      : version,
+                "schemaDate"         : date,
+                "senderControlRef"   : senderControlRef,
+                "applicationRef"     : appRef,
+                "testIndicator"      : testIndicator,
+                "senderId"           : senderId,
+                "receiverId"         : receiverId,
+                "dateOfPreparation"  : dateOfPreparation,
+                "timeOfPreparation"  : timeOfPreparation,
+                "messageType"        : messageType,
+                "caseReferenceNumber": caseReferenceNumber,
+                "spgVersion"         : spgVersion,
+                "spgUpdateUser"      : spgUpdateUser,
+                "offenderAddressID"  : offenderAddressID,
+                "offenderID"         : offenderID,
+                "status"             : status,
+                "houseNumber"        : houseNumber,
+                "streetName"         : streetName,
+                "district"           : district,
+                "townCity"           : townCity,
+                "county"             : county,
+                "postcode"           : postcode,
+                "startDate"          : startDate,
+                "noFixedAbode"       : noFixedAbode,
+        ] as Map<String, Object>
+        return data
+    }
+
+    @SuppressWarnings("unused")
     Message renderOfflocRequest(
             final String schemaDate,
             final String schemaVersion,
