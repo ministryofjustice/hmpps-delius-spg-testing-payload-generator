@@ -304,6 +304,102 @@ class MessageRenderer {
     }
 
     @SuppressWarnings("unused")
+    Message renderCustodyRecallChange(final String version,
+                                final String date,
+                                final String senderControlRef,
+                                final String appRef,
+                                final String testIndicator,
+                                final String senderId,
+                                final String receiverId,
+                                final String messageType,
+                                final Integer notificationCode,
+                                final String caseReferenceNumber,
+                                final String spgVersion,
+                                final String spgUpdateUser,
+                                final String eventID,
+                                final String offenderID,
+                                final String recallUser,
+                                final String recallDate,
+                                final String recallReason,
+                                final String recallLocation,
+                                final String protocol,
+                                final String dateOfPreparation,
+                                final String timeOfPreparation) throws Exception {
+        final URL templateUrl = getResourceUrl("templates/CustodyRecallChange.tpl")
+        final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", notificationCode)
+        final Map<String, Object> data = buildCustodyRecallChange(
+                version,
+                date,
+                senderControlRef,
+                appRef,
+                testIndicator,
+                senderId,
+                receiverId,
+                messageType,
+                caseReferenceNumber,
+                spgVersion,
+                spgUpdateUser,
+                eventID,
+                offenderID,
+                recallUser,
+                recallDate,
+                recallReason,
+                recallLocation,
+                dateOfPreparation,
+                timeOfPreparation
+        )
+        data.putAll(notificationCodeMap)
+
+        final String body = templateRenderer.render(templateUrl, data)
+
+        return buildSoapMessage(body, protocol)
+    }
+
+    private static Map<String, Object> buildCustodyRecallChange(final String version,
+                                                          final String date,
+                                                          final String senderControlRef,
+                                                          final String appRef,
+                                                          final String testIndicator,
+                                                          final String senderId,
+                                                          final String receiverId,
+                                                          final String messageType,
+                                                          final String caseReferenceNumber,
+                                                          final String spgVersion,
+                                                          final String spgUpdateUser,
+                                                          final String eventID,
+                                                          final String offenderID,
+                                                          final String recallUser,
+                                                          final String recallDate,
+                                                          final String recallReason,
+                                                          final String recallLocation,
+                                                          final String dateOfPreparation,
+                                                          final String timeOfPreparation) {
+
+        final Map<String, Object> data = [
+                "schemaVersion"      : version,
+                "schemaDate"         : date,
+                "senderControlRef"   : senderControlRef,
+                "applicationRef"     : appRef,
+                "testIndicator"      : testIndicator,
+                "senderId"           : senderId,
+                "receiverId"         : receiverId,
+                "dateOfPreparation"  : dateOfPreparation,
+                "timeOfPreparation"  : timeOfPreparation,
+                "messageType"        : messageType,
+                "caseReferenceNumber": caseReferenceNumber,
+                "spgVersion"         : spgVersion,
+                "spgUpdateUser"      : spgUpdateUser,
+                "eventID"            : eventID,
+                "offenderID"         : offenderID,
+                "recallUser"         : recallUser,
+                "recallDate"         : recallDate,
+                "recallReason"       : recallReason,
+                "recallLocation"     : recallLocation,
+        ] as Map<String, Object>
+        return data
+    }
+
+    @SuppressWarnings("unused")
     Message renderCustodyKeyDate(final String version,
                                  final String date,
                                  final String senderControlRef,
