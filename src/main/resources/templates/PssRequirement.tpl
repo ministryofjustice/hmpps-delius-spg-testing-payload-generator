@@ -16,29 +16,62 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
             MessageReferenceNumber(1)
         }
 
-        CustodyRelease {
-            CustodyReleaseDetails {
+        PSSRequirement {
+            PSSRequirementDetails {
                 Offender {
                     CaseReferenceNumber(caseReferenceNumber)
                 }
 
                 SPGVersion {
-
-                    if (spgVersion == null) {
+                    if (masterSpgVersion == null || messageType.equals("INS")) {
                         SPGVersion("00000000000000000000000000000000")
                     } else {
-                        SPGVersion(spgVersion)
+                        SPGVersion(masterSpgVersion)
                     }
 
                     SPGUpdateUser(spgUpdateUser)
                 }
 
-                CustodyRelease {
+                PSSRequirement {
+                    if (requirementID == null) {
+                        PSSRequirementID("0")
+                    } else {
+                        PSSRequirementID(requirementID)
+                    }
+
                     EventID(eventID)
                     OffenderID(offenderID)
-                    ReleaseUser(releaseUser)
-                    ActualReleaseDate(actualReleaseDate)
-                    ReleaseType(releaseType)
+                    PSSRqmntTypeMainCategory(requirementTypeMainCategory)
+
+                    if (requirementTypeSubCategory != null) {
+                        PSSRqmntTypeSubCategory(requirementTypeSubCategory)
+                    }
+
+                    ImposedDate(imposedDate)
+
+                    if (notes != null) {
+                        Notes(notes)
+                    }
+
+                    if (length != null) {
+                        Length(length)
+                    }
+
+                    if (actualEndDate != null) {
+                        ActualEndDate(actualEndDate)
+                    }
+
+                    if (terminationReason != null) {
+                        TerminationReason(terminationReason)
+                    }
+
+                    if (attendanceCount != null) {
+                        AttendanceCount(attendanceCount)
+                    }
+
+                    PSProvider(psProvider)
+                    PSResponsibleTeam(psResponsibleTeam)
+                    PSResponsibleOfficer(psResponsibleOfficer)
                 }
             }
         }

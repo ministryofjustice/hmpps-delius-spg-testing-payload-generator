@@ -16,29 +16,29 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
             MessageReferenceNumber(1)
         }
 
-        CustodyRelease {
-            CustodyReleaseDetails {
+        TerminateSentence {
+            TerminateSentenceDetails {
                 Offender {
                     CaseReferenceNumber(caseReferenceNumber)
                 }
 
                 SPGVersion {
-
-                    if (spgVersion == null) {
+                    if (masterSpgVersion == null || messageType.equals("INS")) {
                         SPGVersion("00000000000000000000000000000000")
                     } else {
-                        SPGVersion(spgVersion)
+                        SPGVersion(masterSpgVersion)
                     }
 
                     SPGUpdateUser(spgUpdateUser)
                 }
 
-                CustodyRelease {
+                TerminateSentence {
                     EventID(eventID)
                     OffenderID(offenderID)
-                    ReleaseUser(releaseUser)
-                    ActualReleaseDate(actualReleaseDate)
-                    ReleaseType(releaseType)
+                    TerminateUser(spgUpdateUser)
+                    TerminationDate(terminationDate)
+                    TerminationReason(terminationReason)
+                    TerminationDateTime(terminationDateTime)
                 }
             }
         }

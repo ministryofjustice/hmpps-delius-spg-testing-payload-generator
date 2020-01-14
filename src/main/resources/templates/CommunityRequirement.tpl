@@ -16,29 +16,47 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
             MessageReferenceNumber(1)
         }
 
-        CustodyRelease {
-            CustodyReleaseDetails {
+        CommunityRequirement {
+            CommunityRequirementDetails {
                 Offender {
                     CaseReferenceNumber(caseReferenceNumber)
                 }
 
                 SPGVersion {
-
-                    if (spgVersion == null) {
+                    if (masterSpgVersion == null || messageType.equals("INS")) {
                         SPGVersion("00000000000000000000000000000000")
                     } else {
-                        SPGVersion(spgVersion)
+                        SPGVersion(masterSpgVersion)
                     }
 
                     SPGUpdateUser(spgUpdateUser)
                 }
 
-                CustodyRelease {
+                CommunityRequirement {
+                    if (requirementID == null) {
+                        RequirementID("0")
+                    } else {
+                        RequirementID(requirementID)
+                    }
+
                     EventID(eventID)
                     OffenderID(offenderID)
-                    ReleaseUser(releaseUser)
-                    ActualReleaseDate(actualReleaseDate)
-                    ReleaseType(releaseType)
+                    RequirementTypeMainCategory(requirementTypeMainCategory)
+                    RequirementTypeSubCategory(requirementTypeSubCategory)
+                    ImposedDate(imposedDate)
+                    Length(length)
+
+                    if (actualEndDate != null) {
+                        ActualEndDate(actualEndDate)
+                    }
+
+                    if (terminationReason != null) {
+                        TerminationReason(terminationReason)
+                    }
+
+                    RQProvider(rqProvider)
+                    RQResponsibleTeam(rqResponsibleTeam)
+                    RQResponsibleOfficer(rqResponsibleOfficer)
                 }
             }
         }

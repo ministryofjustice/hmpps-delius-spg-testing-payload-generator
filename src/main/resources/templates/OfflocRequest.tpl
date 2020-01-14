@@ -16,29 +16,16 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
             MessageReferenceNumber(1)
         }
 
-        CustodyRelease {
-            CustodyReleaseDetails {
+        OFFLOCRequest {
+            OFFLOCRequestDetails {
                 Offender {
                     CaseReferenceNumber(caseReferenceNumber)
                 }
 
-                SPGVersion {
-
-                    if (spgVersion == null) {
-                        SPGVersion("00000000000000000000000000000000")
-                    } else {
-                        SPGVersion(spgVersion)
-                    }
-
-                    SPGUpdateUser(spgUpdateUser)
-                }
-
-                CustodyRelease {
-                    EventID(eventID)
+                OFFLOCRequest {
                     OffenderID(offenderID)
-                    ReleaseUser(releaseUser)
-                    ActualReleaseDate(actualReleaseDate)
-                    ReleaseType(releaseType)
+                    CRCSearchID(crcSearchID)
+                    OFFLOCRequestUser(offlocRequestUser)
                 }
             }
         }

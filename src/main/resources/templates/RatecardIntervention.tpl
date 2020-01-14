@@ -16,29 +16,47 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
             MessageReferenceNumber(1)
         }
 
-        CustodyRelease {
-            CustodyReleaseDetails {
+        RateCardIntervention {
+            RateCardInterventionDetails {
                 Offender {
                     CaseReferenceNumber(caseReferenceNumber)
                 }
 
                 SPGVersion {
-
-                    if (spgVersion == null) {
+                    if (masterSpgVersion == null || messageType.equals("INS")) {
                         SPGVersion("00000000000000000000000000000000")
                     } else {
-                        SPGVersion(spgVersion)
+                        SPGVersion(masterSpgVersion)
                     }
 
                     SPGUpdateUser(spgUpdateUser)
                 }
 
-                CustodyRelease {
+                RateCardIntervention {
+                    if (requirementID == null) {
+                        InterventionID("0")
+                    } else {
+                        InterventionID(requirementID)
+                    }
+
                     EventID(eventID)
                     OffenderID(offenderID)
-                    ReleaseUser(releaseUser)
-                    ActualReleaseDate(actualReleaseDate)
-                    ReleaseType(releaseType)
+                    InterventionTypeMainCategory(requirementTypeMainCategory)
+                    InterventionTypeSubCategory(requirementTypeSubCategory)
+                    ImposedDate(imposedDate)
+                    Length(length)
+
+                    if (actualEndDate != null) {
+                        ActualEndDate(actualEndDate)
+                    }
+
+                    if (terminationReason != null) {
+                        TerminationReason(terminationReason)
+                    }
+
+                    InterventionProvider(rqProvider)
+                    InterventionResponsibleTeam(rqResponsibleTeam)
+                    InterventionResponsibleOfficer(rqResponsibleOfficer)
                 }
             }
         }

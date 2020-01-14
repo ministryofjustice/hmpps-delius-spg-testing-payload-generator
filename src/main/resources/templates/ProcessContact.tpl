@@ -16,29 +16,53 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
             MessageReferenceNumber(1)
         }
 
-        CustodyRelease {
-            CustodyReleaseDetails {
+        ProcessContact {
+            ProcessContactDetails {
                 Offender {
                     CaseReferenceNumber(caseReferenceNumber)
                 }
 
                 SPGVersion {
-
-                    if (spgVersion == null) {
+                    if (masterSpgVersion == null || messageType.equals("INS")) {
                         SPGVersion("00000000000000000000000000000000")
                     } else {
-                        SPGVersion(spgVersion)
+                        SPGVersion(masterSpgVersion)
                     }
 
                     SPGUpdateUser(spgUpdateUser)
                 }
 
-                CustodyRelease {
-                    EventID(eventID)
+                ProcessContact {
+                    if (processID == null) {
+                        ProcessID("0")
+                    } else {
+                        ProcessID(processID)
+                    }
+
                     OffenderID(offenderID)
-                    ReleaseUser(releaseUser)
-                    ActualReleaseDate(actualReleaseDate)
-                    ReleaseType(releaseType)
+                    ProcessType(processType)
+                    ProcessRefDate(processRefDate)
+                    ProcessStartDate(processStartDate)
+
+                    if (processExpEndDate != null) {
+                        ProcessExpEndDate(processExpEndDate)
+                    }
+
+                    if (processEndDate != null) {
+                        ProcessEndDate(processEndDate)
+                    }
+
+                    ProcessStage(processStage)
+                    ProcessStageDateTime(processStageDateTime)
+
+                    if (processOutcome != null) {
+                        ProcessOutcome(processOutcome)
+                    }
+
+                    IntendedProvider(intendedProvider)
+                    ProcessManagerProvider(processManagerProvider)
+                    ProcessManagerTeam(processManagerTeam)
+                    ProcessManagerOfficer(processManagerOfficer)
                 }
             }
         }

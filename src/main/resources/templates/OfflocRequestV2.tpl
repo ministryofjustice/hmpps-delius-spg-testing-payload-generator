@@ -1,4 +1,4 @@
-xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", 'xmlns:xsi': "http://www.w3.org/2001/XMLSchema-instance", SchemaDate: schemaDate, SchemaVersion: schemaVersion, 'xsi:schemaLocation': "http://www.justice.gsi.gov.uk/SPG/ SPG-XML_Message_Root-V" + schemaVersion + ".xsd") {
+xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", SchemaDate: schemaDate, SchemaVersion: schemaVersion) {
     SPGInterchangeHeader {
         SenderIdentity(senderId)
         ReceiverIdentity(receiverId)
@@ -16,29 +16,16 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
             MessageReferenceNumber(1)
         }
 
-        CustodyRelease {
-            CustodyReleaseDetails {
+        OFFLOCRequest2 {
+            OFFLOCRequest2Details {
                 Offender {
                     CaseReferenceNumber(caseReferenceNumber)
                 }
 
-                SPGVersion {
-
-                    if (spgVersion == null) {
-                        SPGVersion("00000000000000000000000000000000")
-                    } else {
-                        SPGVersion(spgVersion)
-                    }
-
-                    SPGUpdateUser(spgUpdateUser)
-                }
-
-                CustodyRelease {
-                    EventID(eventID)
+                OFFLOCRequest2 {
                     OffenderID(offenderID)
-                    ReleaseUser(releaseUser)
-                    ActualReleaseDate(actualReleaseDate)
-                    ReleaseType(releaseType)
+                    CRCSearchID(crcSearchID)
+                    OFFLOCRequestUser(offlocRequestUser)
                 }
             }
         }

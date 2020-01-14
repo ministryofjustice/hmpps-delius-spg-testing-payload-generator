@@ -16,29 +16,56 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
             MessageReferenceNumber(1)
         }
 
-        CustodyRelease {
-            CustodyReleaseDetails {
+        UPWContact {
+            UPWContactDetails {
                 Offender {
                     CaseReferenceNumber(caseReferenceNumber)
                 }
 
                 SPGVersion {
-
-                    if (spgVersion == null) {
+                    if (masterSpgVersion == null || messageType.equals("INS")) {
                         SPGVersion("00000000000000000000000000000000")
                     } else {
-                        SPGVersion(spgVersion)
+                        SPGVersion(masterSpgVersion)
                     }
 
                     SPGUpdateUser(spgUpdateUser)
                 }
 
-                CustodyRelease {
+                UPWAppointment {
+                    UPWAppointmentID(upwAppointmentID)
                     EventID(eventID)
                     OffenderID(offenderID)
-                    ReleaseUser(releaseUser)
-                    ActualReleaseDate(actualReleaseDate)
-                    ReleaseType(releaseType)
+                    ProjectName(projectName)
+                    ProjectType(projectType)
+                    AppointmentDate(appointmentDate)
+                    StartTime(startTime)
+                    EndTime(endTime)
+                    MinutesOffered(minutesOffered)
+
+                    if (highVisibilityVest != null) {
+                        HighVisibilityVest(highVisibilityVest)
+                    }
+
+                    if (notes != null) {
+                        Notes(notes)
+                    }
+
+                    Provider(provider)
+                    UPWTeam(upwTeam)
+                    UPWContactOfficer(upwContactOfficer)
+
+                    if (ndcupaContactID != null) {
+                        NDCUPAContactID(ndcupaContactID)
+                    }
+
+                    if (sensitiveContact != null) {
+                        SensitiveContact(sensitiveContact)
+                    }
+
+                    if (alert != null) {
+                        Alert(alert)
+                    }
                 }
             }
         }

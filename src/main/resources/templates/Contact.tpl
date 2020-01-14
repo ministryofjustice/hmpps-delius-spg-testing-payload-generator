@@ -16,8 +16,8 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
             MessageReferenceNumber(1)
         }
 
-        CustodyRelease {
-            CustodyReleaseDetails {
+        Contact {
+            ContactDetails {
                 Offender {
                     CaseReferenceNumber(caseReferenceNumber)
                 }
@@ -33,12 +33,40 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                     SPGUpdateUser(spgUpdateUser)
                 }
 
-                CustodyRelease {
-                    EventID(eventID)
+                Contact {
+                    ContactID(contactID)
                     OffenderID(offenderID)
-                    ReleaseUser(releaseUser)
-                    ActualReleaseDate(actualReleaseDate)
-                    ReleaseType(releaseType)
+                    EventID(eventID)
+                    NSIID(nsiID)
+
+                    if (alert == null) {
+                        Alert('N')
+                    } else {
+                        Alert(alert)
+                    }
+
+                    ContactType(contactType)
+                    ContactDate(contactDate)
+                    ContactStartTime(contactStartTime)
+                    Provider(provider)
+                    Team(team)
+                    ContactOfficer(contactOfficer)
+
+                    if (location != null) {
+                        Location(location)
+                    }
+
+                    if (contactOutcome != null) {
+                        ContactOutcome(contactOutcome)
+                    }
+
+                    SensitiveContact(sensitiveContact)
+
+                    if (notes != null) {
+                        Notes(notes)
+                    }
+
+                    RARContact(rarContact)
                 }
             }
         }
