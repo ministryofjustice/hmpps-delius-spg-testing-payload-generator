@@ -2001,4 +2001,85 @@ class MessageRenderer {
         return data
     }
 
+    @SuppressWarnings("unused")
+    Message renderGetDocumentList(
+            final String schemaDate,
+            final String schemaVersion,
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String receiverControlReference,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String applicationRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String offenderID,
+            final String crcSearchID,
+            final String refreshRequestUser
+    ) throws Exception {
+        final URL templateUrl = getResourceUrl("templates/GetDocumentList.tpl")
+        final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
+        final Map<String, Object> data = buildGetDocumentList(
+                schemaDate,
+                schemaVersion,
+                senderId,
+                receiverId,
+                senderControlRef,
+                receiverControlReference,
+                dateOfPreparation,
+                timeOfPreparation,
+                applicationRef,
+                testIndicator,
+                messageType,
+                caseReferenceNumber,
+                offenderID,
+                crcSearchID,
+                refreshRequestUser
+        )
+        data.putAll(notificationCodeMap)
+
+        final String body = templateRenderer.render(templateUrl, data)
+
+        return buildSoapMessage(body, SOAP_1_2_PROTOCOL)
+    }
+
+    private static Map<String, Object> buildGetDocumentList(
+            final String schemaDate,
+            final String schemaVersion,
+            final String senderId,
+            final String receiverId,
+            final String senderControlRef,
+            final String receiverControlReference,
+            final String dateOfPreparation,
+            final String timeOfPreparation,
+            final String applicationRef,
+            final String testIndicator,
+            final String messageType,
+            final String caseReferenceNumber,
+            final String offenderID,
+            final String crcSearchID,
+            final String refreshRequestUser) {
+
+        final Map<String, Object> data = [
+                "schemaDate"              : schemaDate,
+                "schemaVersion"           : schemaVersion,
+                "senderId"                : senderId,
+                "receiverId"              : receiverId,
+                "senderControlRef"        : senderControlRef,
+                "receiverControlReference": receiverControlReference,
+                "dateOfPreparation"       : dateOfPreparation,
+                "timeOfPreparation"       : timeOfPreparation,
+                "applicationRef"          : applicationRef,
+                "testIndicator"           : testIndicator,
+                "messageType"             : messageType,
+                "caseReferenceNumber"     : caseReferenceNumber,
+                "offenderID"              : offenderID,
+                "crcSearchID"             : crcSearchID,
+                "refreshRequestUser"      : refreshRequestUser
+        ] as Map<String, Object>
+        return data
+    }
+
 }
