@@ -2082,4 +2082,124 @@ class MessageRenderer {
         return data
     }
 
+    @SuppressWarnings("unused")
+    Message renderApprovedPremisesReferral(final String version,
+                                           final String date,
+                                           final String senderControlRef,
+                                           final String appRef,
+                                           final String testIndicator,
+                                           final String senderId,
+                                           final String receiverId,
+                                           final String messageType,
+                                           final Integer notificationCode,
+                                           final String caseReferenceNumber,
+                                           final String spgVersion,
+                                           final String spgUpdateUser,
+                                           final String apReferralID,
+                                           final String eventID,
+                                           final String offenderID,
+                                           final String referralDate,
+                                           final String referringProvider,
+                                           final String referringTeam,
+                                           final String referringOfficer,
+                                           final String referralCategory,
+                                           final String referralDecision,
+                                           final String referralGroup,
+                                           final String apReferralSource,
+                                           final String sourceType,
+                                           final String protocol,
+                                           final String dateOfPreparation,
+                                           final String timeOfPreparation) throws Exception {
+        final URL templateUrl = getResourceUrl("templates/approvedPremisesReferral.tpl")
+        final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", notificationCode)
+        final Map<String, Object> data = buildApprovedPremisesReferral(
+                version,
+                date,
+                senderControlRef,
+                appRef,
+                testIndicator,
+                senderId,
+                receiverId,
+                messageType,
+                caseReferenceNumber,
+                spgVersion,
+                spgUpdateUser,
+                apReferralID,
+                eventID,
+                offenderID,
+                referralDate,
+                referringProvider,
+                referringTeam,
+                referringOfficer,
+                referralCategory,
+                referralDecision,
+                referralGroup,
+                apReferralSource,
+                sourceType,
+                dateOfPreparation,
+                timeOfPreparation
+        )
+        data.putAll(notificationCodeMap)
+
+        final String body = templateRenderer.render(templateUrl, data)
+
+        return buildSoapMessage(body, protocol)
+    }
+
+    private static Map<String, Object> buildApprovedPremisesReferral(final String version,
+                                                                     final String date,
+                                                                     final String senderControlRef,
+                                                                     final String appRef,
+                                                                     final String testIndicator,
+                                                                     final String senderId,
+                                                                     final String receiverId,
+                                                                     final String messageType,
+                                                                     final String caseReferenceNumber,
+                                                                     final String spgVersion,
+                                                                     final String spgUpdateUser,
+                                                                     final String apReferralID,
+                                                                     final String eventID,
+                                                                     final String offenderID,
+                                                                     final String referralDate,
+                                                                     final String referringProvider,
+                                                                     final String referringTeam,
+                                                                     final String referringOfficer,
+                                                                     final String referralCategory,
+                                                                     final String referralDecision,
+                                                                     final String referralGroup,
+                                                                     final String apReferralSource,
+                                                                     final String sourceType,
+                                                                     final String dateOfPreparation,
+                                                                     final String timeOfPreparation) {
+
+        final Map<String, Object> data = [
+                "schemaVersion"      : version,
+                "schemaDate"         : date,
+                "senderControlRef"   : senderControlRef,
+                "applicationRef"     : appRef,
+                "testIndicator"      : testIndicator,
+                "senderId"           : senderId,
+                "receiverId"         : receiverId,
+                "dateOfPreparation"  : dateOfPreparation,
+                "timeOfPreparation"  : timeOfPreparation,
+                "messageType"        : messageType,
+                "caseReferenceNumber": caseReferenceNumber,
+                "spgVersion"         : spgVersion,
+                "spgUpdateUser"      : spgUpdateUser,
+                "apReferralID"       : apReferralID,
+                "eventID"            : eventID,
+                "offenderID"         : offenderID,
+                "referralDate"       : referralDate,
+                "referringProvider"  : referringProvider,
+                "referringTeam"      : referringTeam,
+                "referringOfficer"   : referringOfficer,
+                "referralCategory"   : referralCategory,
+                "referralDecision"   : referralDecision,
+                "referralGroup"      : referralGroup,
+                "apReferralSource"   : apReferralSource,
+                "sourceType"         : sourceType,
+        ] as Map<String, Object>
+        return data
+    }
+
 }
