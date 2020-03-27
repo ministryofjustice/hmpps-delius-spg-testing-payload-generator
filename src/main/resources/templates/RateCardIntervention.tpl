@@ -50,7 +50,7 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                     OffenderID(offenderID)
                     InterventionTypeMainCategory(interventionTypeMainCategory)
 
-                    if (interventionTypeSubCategory != null)
+                    if (interventionTypeSubCategory != null) {
                         InterventionTypeSubCategory(interventionTypeSubCategory)
                     }
 
