@@ -2373,7 +2373,7 @@ class MessageRenderer {
                 "intendedProvider"                  : intendedProvider,
                 "interventionProvider"              : interventionProvider,
                 "interventionResponsibleTeam"       : interventionResponsibleTeam,
-                "interventionResponsibleOffice"     : interventionResponsibleOfficer
+                "interventionResponsibleOfficer"    : interventionResponsibleOfficer
         ] as Map<String, Object>
         return data
     }
