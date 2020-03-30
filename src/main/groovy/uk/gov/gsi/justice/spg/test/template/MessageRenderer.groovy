@@ -2347,7 +2347,7 @@ class MessageRenderer {
                 "senderControlRef"                  : senderControlRef,
                 "dateOfPreparation"                 : dateOfPreparation,
                 "timeOfPreparation"                 : timeOfPreparation,
-                "appRef"                            : appRef,
+                "applicationRef"                    : appRef,
                 "testIndicator"                     : testIndicator,
                 "messageType"                       : messageType,
                 "caseReferenceNumber"               : caseReferenceNumber,
