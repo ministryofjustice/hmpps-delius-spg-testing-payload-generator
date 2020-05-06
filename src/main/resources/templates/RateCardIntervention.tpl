@@ -16,8 +16,8 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
             MessageReferenceNumber(1)
         }
 
-        ProcessContact {
-            ProcessContactDetails {
+        RateCardIntervention {
+            RateCardInterventionDetails {
                 Offender {
                     CaseReferenceNumber(caseReferenceNumber)
                 }
@@ -32,14 +32,12 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                     SPGUpdateUser(spgUpdateUser)
                 }
 
-                ProcessContact {
-                    if (processID == null) {
-                        ProcessID("0")
+                RateCardIntervention {
+                    if (interventionID == null) {
+                        InterventionID("0")
                     } else {
-                        ProcessID(processID)
+                        InterventionID(interventionID)
                     }
-
-                    OffenderID(offenderID)
 
                     if (eventID != null) {
                         EventID(eventID)
@@ -49,48 +47,59 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                         RequirementID(requirementID)
                     }
 
-                    ProcessType(processType)
+                    OffenderID(offenderID)
+                    InterventionTypeMainCategory(interventionTypeMainCategory)
 
-                    if (processSubType != null) {
-                        ProcessSubType(processSubType)
+                    if (interventionTypeSubCategory != null) {
+                        InterventionTypeSubCategory(interventionTypeSubCategory)
                     }
 
-                    ProcessRefDate(processRefDate)
-
-                    if (processStartDate != null) {
-                        ProcessStartDate(processStartDate)
+                    if (referralDate != null) {
+                        ReferralDate(referralDate)
                     }
 
-                    if (processExpEndDate != null) {
-                        ProcessExpEndDate(processExpEndDate)
+                    if (expectedStartDate != null) {
+                        ExpectedStartDate(expectedStartDate)
                     }
 
-                    if (processEndDate != null) {
-                        ProcessEndDate(processEndDate)
+                    if (actualStartDate != null) {
+                        ActualStartDate(actualStartDate)
                     }
 
-                    ProcessStage(processStage)
-                    ProcessStageDateTime(processStageDateTime)
-
-                    if (processNotes != null) {
-                        ProcessNotes(processNotes)
+                    if (length != null) {
+                        Length(length)
                     }
 
-                    if (processOutcome != null) {
-                        ProcessOutcome(processOutcome)
+                    if (notes != null) {
+                        Notes(notes)
                     }
 
-                    if (processEndAttCount != null) {
-                        ProcessEndAttCount(processEndAttCount)
+                    InterventionStatus(interventionStatus)
+                    InterventionStatusDateTime(interventionStatusDateTime)
+
+                    if (expectedEndDate != null) {
+                        ExpectedEndDate(expectedEndDate)
+                    }
+
+                    if (actualEndDate != null) {
+                        ActualEndDate(actualEndDate)
+                    }
+
+                    if (interventionOutcome != null) {
+                        InterventionOutCome(interventionOutcome)
+                    }
+
+                    if (attendanceCount != null) {
+                        AttendanceCount(attendanceCount)
                     }
 
                     if (intendedProvider != null) {
                         IntendedProvider(intendedProvider)
                     }
 
-                    ProcessManagerProvider(processManagerProvider)
-                    ProcessManagerTeam(processManagerTeam)
-                    ProcessManagerOfficer(processManagerOfficer)
+                    InterventionProvider(interventionProvider)
+                    InterventionResponsibleTeam(interventionResponsibleTeam)
+                    InterventionResponsibleOfficer(interventionResponsibleOfficer)
                 }
             }
         }
