@@ -2,7 +2,7 @@
 
 #create an identity file which contains your userid in the format:
 #user=PaulCrimes
-myuser=`grep user  ~/.aws/identity|cut -d'=' -f2`
+myuser=`grep user ~/.aws/identity|cut -d'=' -f2`
 
 rolename="developer"
 mfa_arn="arn:aws:iam::570551521311:mfa/$myuser"
