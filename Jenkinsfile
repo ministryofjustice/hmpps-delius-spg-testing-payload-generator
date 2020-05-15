@@ -1,5 +1,5 @@
 pipeline {
-    agent { label "!master && !windows_slave" }
+    agent { label "spg_builds" }
     options {
         disableConcurrentBuilds()
     }
