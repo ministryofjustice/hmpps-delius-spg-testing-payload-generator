@@ -1,0 +1,34 @@
+version: 0.2
+
+env:
+  variables:
+    test_results_bucket: 'tf-eu-west-2-hmpps-eng-dev-ci-test-results-s3bucket'
+    project_name: 'hmpps-delius-spg-testing-payload-generator'
+    TZ: 'Europe/London'
+    CI: true
+    PROJECT_IDENTIFIER: 'hmpps-spg-testing-payload-generator'
+phases:
+  install:
+    commands:
+      - ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime
+      - echo ${TZ} > /etc/timezone
+      - apt-get update
+      - apt-get install jq -y
+      - apt-get install awscli -y
+  pre_build:
+    commands:
+      - gradle build --dry-run --configure-on-demand --daemon
+  build:
+    commands:
+      - gradle clean build
+      - ${CODEBUILD_SRC_DIR}/scripts/archive-application-test-artifacts.sh
+reports:
+  UnitTestReports:
+    files:
+      - '**/*'
+    base-directory: 'build/test-results'
+    file-format: 'JunitXml'
+artifacts:
+  files:
+    - '**/*'
+  name: $Env:PROJECT_IDENTIFIER-$(date +%Y-%m-%d-%H-%m-%S)
