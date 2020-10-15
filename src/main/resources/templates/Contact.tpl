@@ -69,7 +69,9 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                         Notes(notes)
                     }
 
-                    RARContact(rarContact)
+                    if (rarContact != null) {
+                        RARContact(rarContact)
+                    }
                 }
             }
         }
