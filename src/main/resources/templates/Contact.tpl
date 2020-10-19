@@ -36,7 +36,10 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                 Contact {
                     ContactID(contactID)
                     OffenderID(offenderID)
-                    EventID(eventID)
+                    
+                    if (eventID != null) {
+                        EventID(eventID)
+                    }
 
                     if (licConditionID != null) {
                         LicConditionID(licConditionID)
