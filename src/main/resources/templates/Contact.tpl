@@ -36,8 +36,26 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                 Contact {
                     ContactID(contactID)
                     OffenderID(offenderID)
-                    EventID(eventID)
-                    NSIID(nsiID)
+                    
+                    if (eventID != null) {
+                        EventID(eventID)
+                    }
+
+                    if (licConditionID != null) {
+                        LicConditionID(licConditionID)
+                    }
+
+                    if (nsiID != null) {
+                        NSIID(nsiID)
+                    }
+
+                    if (pssrqmntID != null) {
+                        PSSRqmntID(pssrqmntID)
+                    }
+
+                    if (requirementID != null) {
+                        RequirementID(requirementID)
+                    }
 
                     if (alert == null) {
                         Alert('N')
@@ -60,13 +78,19 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                         ContactOutcome(contactOutcome)
                     }
 
+                    if (enforcementAction != null) {
+                        EnforcementAction(enforcementAction)
+                    }
+
                     SensitiveContact(sensitiveContact)
 
                     if (notes != null) {
                         Notes(notes)
                     }
 
-                    RARContact(rarContact)
+                    if (rarContact != null) {
+                        RARContact(rarContact)
+                    }
                 }
             }
         }
