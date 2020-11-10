@@ -7,7 +7,7 @@ env:
 phases:
   pre_build:
     commands:
-      - version.sh
+      - ${CODEBUILD_SRC_DIR}/scripts/version.sh
       - export FULL_VERSION=${CODEBUILD_SRC_DIR}/version.full
       - gradle build --dry-run --configure-on-demand --daemon
   build:
