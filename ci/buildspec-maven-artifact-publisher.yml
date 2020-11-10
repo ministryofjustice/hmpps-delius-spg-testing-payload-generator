@@ -13,5 +13,5 @@ phases:
   build:
     commands:
       - gradle clean build
-#      - ls -alR build/libs
-#      - gradle publish
+      - ls -alR build/libs
+      - gradle publish
