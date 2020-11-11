@@ -28,7 +28,7 @@ publishing {
         mavenJava(MavenPublication) {
             groupId = 'spg-testing'
             artifactId = 'spg-payload-generator'
-            version = System.getProperty('FULL_VERSION') ? System.getenv('FULL_VERSION') : '0.0.0'
+            version = rootProject.file('version.full').exists() ? rootProject.file('version.full').text.trim() : '0.0.0'
             from components.java
         }
     }
