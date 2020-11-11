@@ -15,5 +15,5 @@ phases:
       - echo "----------------------------------------"
       - ls -l
       - echo "----------------------------------------"
-#      - ls -alR build/libs
-#      - gradle publish
+      - ls -alR build/libs
+      - gradle publish
