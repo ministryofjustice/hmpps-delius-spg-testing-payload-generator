@@ -2542,7 +2542,7 @@ class MessageRenderer {
                             final String ogrs3score2,
                             final String protocol
     ) throws Exception {
-        final URL templateUrl = getResourceUrl("templates/CustodyRelease.tpl")
+        final URL templateUrl = getResourceUrl("templates/Event.tpl")
         final Map<String, Integer> notificationCodeMap = singletonMap("notificationCode", 200)
         final Map<String, Object> data = buildEvent(
                 schemaVersion,
