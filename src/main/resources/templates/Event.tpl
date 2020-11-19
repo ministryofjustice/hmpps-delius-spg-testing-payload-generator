@@ -33,7 +33,7 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                 }
 
                 Event {
-                    EventID(entityID)
+                    EventID(eventID)
                     OffenderID(offenderID)
                     ReferralDate(referralDate)
 
