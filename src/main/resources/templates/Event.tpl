@@ -59,7 +59,7 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
 
                     OffenceCode(offenceCode)
 
-                    if (sentenceDate != null)
+                    if (sentenceDate != null) {
                         SentenceDate(sentenceDate)
                     }
 
