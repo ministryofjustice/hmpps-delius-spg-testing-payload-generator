@@ -50,7 +50,7 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                     OSResponsibleTeam(osResponsibleTeam)
                     OSResponsibleOfficer(osResponsibleOfficer)
                     OSProvider(osProvider)
-                    OffenderDate(offenceDate)
+                    OffenceDate(offenceDate)
                     OffenceCount(offenceCount)
 
                     if (tics != null) {
