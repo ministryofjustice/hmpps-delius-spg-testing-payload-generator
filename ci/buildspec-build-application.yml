@@ -9,9 +9,6 @@ phases:
   install:
     runtime-versions:
       java: openjdk8
-  pre_build:
-    commands:
-      - gradle build --dry-run --configure-on-demand --daemon
   build:
     commands:
       - java -version
