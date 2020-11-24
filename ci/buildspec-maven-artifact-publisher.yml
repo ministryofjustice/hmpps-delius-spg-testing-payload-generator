@@ -8,12 +8,12 @@ phases:
   pre_build:
     commands:
       - ${CODEBUILD_SRC_DIR}/scripts/version.sh
-      - gradle build --dry-run --configure-on-demand --daemon
+      - ./gradlew build --dry-run --configure-on-demand --daemon
   build:
     commands:
-      - gradle clean build
+      - ./gradlew clean build
       - echo "----------------------------------------"
       - ls -l
       - echo "----------------------------------------"
       - ls -alR build/libs
-      - gradle publish
+      - ./gradlew publish
