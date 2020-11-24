@@ -36,12 +36,11 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                     EventID(eventID)
                     OffenderID(offenderID)
                     ReferralDate(referralDate)
+                    EventNumber(eventNumber)
 
                     if (notes != null) {
                         Notes(notes)
                     }
-
-                    EventNumber(eventNumber)
 
                     if (convictionDate != null) {
                         ConvictionDate(convictionDate)
