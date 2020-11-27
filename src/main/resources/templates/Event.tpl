@@ -139,15 +139,15 @@ xmlDeclaration() SPGInterchange('xmlns': "http://www.justice.gsi.gov.uk/SPG/", '
                     }
 
                     if (ogrs2Score != null) {
-                        OGRS2Score(ogrs2score)
+                        OGRS2Score(ogrs2Score)
                     }
 
                     if (ogrs3Score1 != null) {
-                        OGRS3Score1(ogrs3score1)
+                        OGRS3Score1(ogrs3Score1)
                     }
 
                     if (ogrs3Score2 != null) {
-                        OGRS3Score2(ogrs3score2)
+                        OGRS3Score2(ogrs3Score2)
                     }
                 }
             }
