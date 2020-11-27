@@ -2538,8 +2538,8 @@ class MessageRenderer {
                             final String allocationDate,
                             final String allocatedProvider,
                             final String ogrs2Score,
-                            final String ogrs3score1,
-                            final String ogrs3score2,
+                            final String ogrs3Score1,
+                            final String ogrs3Score2,
                             final String protocol
     ) throws Exception {
         final URL templateUrl = getResourceUrl("templates/Event.tpl")
@@ -2591,8 +2591,8 @@ class MessageRenderer {
                 allocationDate,
                 allocatedProvider,
                 ogrs2Score,
-                ogrs3score1,
-                ogrs3score2
+                ogrs3Score1,
+                ogrs3Score2
         )
         data.putAll(notificationCodeMap)
 
@@ -2647,8 +2647,8 @@ class MessageRenderer {
                                                   final String allocationDate,
                                                   final String allocatedProvider,
                                                   final String ogrs2Score,
-                                                  final String ogrs3score1,
-                                                  final String ogrs3score2) {
+                                                  final String ogrs3Score1,
+                                                  final String ogrs3Score2) {
 
         final Map<String, Object> data = [
                 "schemaVersion"         : schemaVersion,
@@ -2697,8 +2697,8 @@ class MessageRenderer {
                 "allocationDate"        : allocationDate,
                 "allocatedProvider"     : allocatedProvider,
                 "ogrs2Score"            : ogrs2Score,
-                "ogrs3score1"           : ogrs3score1,
-                "ogrs3score2"           : ogrs3score2
+                "ogrs3Score1"           : ogrs3Score1,
+                "ogrs3Score2"           : ogrs3Score2
         ] as Map<String, Object>
         return data
     }
