@@ -1,6 +1,5 @@
 module "payload-generator-dev-pipeline" {
   source            = "git::https://github.com/ministryofjustice/hmpps-delius-spg-codepipeline.git//terraform/ci-components/codepipeline?ref=main"
-  environment_name  = "hmpps-sandpit"
   approval_required = false
   artefacts_bucket  = local.artefacts_bucket
   pipeline_name     = local.payload_generator_dev_pipeline_name
@@ -18,7 +17,7 @@ module "payload-generator-dev-pipeline" {
       actions = [
         {
           action_name      = "Build"
-          codebuild_name   = "spgw-java-application-builder${local.test_var}"
+          codebuild_name   = "spgw-java-application-builder"
           input_artifacts  = "SourceArtifact"
           output_artifacts = "BuildArtifact"
           namespace        = "BuildVariables"
